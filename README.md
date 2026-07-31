@@ -1,2 +1,4 @@
-# nothingbuttylerskits.github.io
-Welcome to NothingButTyler Skits!
+# NothingButTyler Skits
+Coming soon! :)
+
+https://nothingbuttylerskits.github.io
