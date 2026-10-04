@@ -1,1 +1,476 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>SearchNow — Crossroads City</title> <!-- Font Awesome 7 Free --> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css" > <style> * { box-sizing: border-box; margin: 0; padding: 0; } html, body { min-height: 100%; } body { font-family: Arial, Helvetica, sans-serif; color: #202124; background: #fff; } /* ======================================== HEADER ======================================== */ .topbar { height: 92px; display: flex; align-items: center; gap: 28px; padding: 0 28px; border-bottom: 1px solid #dadce0; background: #fff; } .logo { font-size: 29px; font-weight: 600; letter-spacing: -2px; white-space: nowrap; } .logo .g { color: #4285f4; } .logo .o1 { color: #ea4335; } .logo .o2 { color: #fbbc05; } .logo .g2 { color: #4285f4; } .logo .l { color: #34a853; } .logo .e { color: #ea4335; } .search-container { width: min(690px, 67vw); } .search-box { height: 48px; border: 1px solid #dfe1e5; border-radius: 25px; display: flex; align-items: center; padding: 0 14px 0 18px; box-shadow: 0 1px 6px rgba(32,33,36,.15); transition: box-shadow .2s ease, border .2s ease; background: #fff; } .search-box:hover, .search-box:focus-within { box-shadow: 0 1px 8px rgba(32,33,36,.25); } .search-icon { color: #5f6368; font-size: 17px; margin-right: 13px; } #searchInput { border: none; outline: none; flex: 1; font-size: 16px; color: #202124; background: transparent; } .search-control { color: #5f6368; padding: 8px; font-size: 16px; } .search-control.lens { cursor: pointer; } .search-control.mic { cursor: pointer; } .search-control.clear { cursor: pointer; font-size: 18px; } .vertical-line { height: 28px; width: 1px; background: #dadce0; margin: 0 5px; } /* ======================================== TABS ======================================== */ .tabs { height: 48px; display: flex; align-items: flex-end; padding-left: max(145px, calc((100vw - 1200px) / 2)); gap: 28px; border-bottom: 1px solid #dadce0; } .tab { height: 48px; display: flex; align-items: center; color: #5f6368; font-size: 13px; cursor: pointer; white-space: nowrap; } .tab i { margin-right: 7px; font-size: 12px; } .tab.active { color: #1a73e8; border-bottom: 3px solid #1a73e8; } /* ======================================== RESULTS ======================================== */ .results { width: min(720px, 90%); margin-left: max(145px, calc((100vw - 1200px) / 2)); padding-top: 18px; padding-bottom: 100px; } .result-count { color: #70757a; font-size: 13px; margin-bottom: 28px; } .result { margin-bottom: 31px; } .result-source { display: flex; align-items: center; gap: 9px; margin-bottom: 5px; } .site-icon { width: 28px; height: 28px; border-radius: 50%; object-fit: contain; background: #f1f3f4; padding: 3px; } .website-icon { padding: 4px; } .source-info { line-height: 1.25; } .site-name { font-size: 14px; color: #202124; } .url { font-size: 12px; color: #5f6368; } .more { margin-left: auto; color: #5f6368; font-size: 17px; cursor: pointer; } /* ======================================== TITLES ======================================== */ .title { color: #1a0dab; font-size: 20px; line-height: 1.3; cursor: pointer; margin-bottom: 5px; } .title:hover { text-decoration: underline; } .snippet { color: #4d5156; font-size: 14px; line-height: 1.55; } .date { color: #70757a; } /* ======================================== MAP RESULT ======================================== */ .maps-result { border: 1px solid #dadce0; border-radius: 12px; padding: 17px; margin-top: 8px; } .maps-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; } .maps-logo { width: 30px; height: 30px; object-fit: contain; } .maps-heading strong { font-size: 15px; } .location { color: #1a0dab; font-size: 19px; cursor: pointer; margin-bottom: 5px; } .location:hover { text-decoration: underline; } .rating { margin-bottom: 5px; } .stars { color: #fbbc04; letter-spacing: 1px; font-size: 14px; } .fake-map { height: 145px; border-radius: 10px; margin-top: 14px; overflow: hidden; position: relative; background: linear-gradient( 125deg, transparent 43%, rgba(255,255,255,.75) 44%, rgba(255,255,255,.75) 47%, transparent 48% ), linear-gradient( 25deg, transparent 47%, rgba(255,255,255,.75) 48%, rgba(255,255,255,.75) 51%, transparent 52% ), #dce8d1; } .fake-map::before { content: ""; position: absolute; width: 150%; height: 20px; background: #9ac6e8; transform: rotate(-18deg); top: 65px; left: -25%; } .map-pin { position: absolute; left: 53%; top: 42%; color: #d93025; font-size: 30px; filter: drop-shadow(0 1px 2px white); } /* ======================================== POLICE RESULT ======================================== */ .warning { display: inline-flex; align-items: center; gap: 6px; margin-top: 9px; background: #fce8e6; color: #c5221f; padding: 4px 9px; border-radius: 4px; font-size: 11px; font-weight: 700; } /* ======================================== YOUTUBE RESULT ======================================== */ .video-card { border: 1px solid #dadce0; border-radius: 12px; overflow: hidden; display: flex; width: 100%; } .video-thumbnail { width: 215px; min-height: 122px; background: radial-gradient( circle at 65% 55%, #ff4b00, #4b1000 42%, #080808 75% ); display: flex; align-items: center; justify-content: center; position: relative; } .video-thumbnail::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient( 0deg, transparent, transparent 3px, rgba(255,255,255,.03) 4px ); } .play-button { width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,.95); display: flex; align-items: center; justify-content: center; color: #222; position: relative; z-index: 2; cursor: pointer; } .play-button i { margin-left: 3px; } .video-info { padding: 15px; } .youtube-source { display: flex; align-items: center; gap: 7px; color: #5f6368; font-size: 12px; margin-bottom: 7px; } .youtube-source img { width: 20px; height: 20px; } .video-title { color: #1a0dab; font-size: 18px; line-height: 1.35; cursor: pointer; margin-bottom: 8px; } .video-title:hover { text-decoration: underline; } /* ======================================== NOTHINGBUTTYLER ======================================== */ .creator { border-top: 1px solid #dadce0; padding-top: 22px; } .creator-title { color: #1a0dab; font-size: 20px; cursor: pointer; } .creator-title:hover { text-decoration: underline; } .creator-description { margin-top: 6px; color: #4d5156; font-size: 14px; line-height: 1.55; } /* ======================================== FAKE PAGES ======================================== */ .overlay { position: fixed; inset: 0; background: #fff; z-index: 100; display: none; overflow-y: auto; } .overlay.active { display: block; } .fake-page { width: min(900px, 90%); margin: 65px auto; } .back { color: #1a73e8; cursor: pointer; font-size: 14px; margin-bottom: 35px; } .fake-page h1 { font-size: 34px; margin-bottom: 15px; } .fake-page h2 { margin-bottom: 10px; } .fake-page p { color: #4d5156; line-height: 1.7; margin-bottom: 20px; } /* ======================================== POLICE PAGE ======================================== */ .police-header { border-left: 5px solid #555; padding-left: 15px; margin-bottom: 25px; } .police-warning { margin-top: 30px; padding: 20px; border: 1px solid #dadce0; background: #f8f9fa; color: #b31412; font-weight: 700; } /* ======================================== YOUTUBE PAGE ======================================== */ .youtube-page-logo { display: flex; align-items: center; gap: 8px; font-size: 28px; font-weight: 700; margin-bottom: 25px; } .youtube-page-logo img { width: 34px; } .youtube-thumbnail-large { height: 400px; background: radial-gradient( circle at 65% 55%, #ff4500, #4b1000 40%, #080808 75% ); display: flex; align-items: center; justify-content: center; margin: 25px 0; border-radius: 8px; } /* ======================================== RESPONSIVE ======================================== */ @media (max-width: 750px) { .topbar { height: 72px; padding: 0 12px; } .logo { display: none; } .search-container { width: 100%; } .tabs { padding-left: 15px; gap: 20px; overflow-x: auto; } .results { margin-left: 15px; width: calc(100% - 30px); } .video-card { flex-direction: column; } .video-thumbnail { width: 100%; height: 180px; } .fake-map { height: 120px; } } </style> </head> <body> <!-- ======================================== HEADER ======================================== --> <header class="topbar"> <div class="logo"> <span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span class="l">l</span><span class="e">e</span> </div> <div class="search-container"> <div class="search-box"> <i class="fa-solid fa-magnifying-glass search-icon"></i> <input id="searchInput" type="text" value="places with heat in Crossroads City, CI" > <i class="fa-solid fa-xmark search-control clear" onclick="clearSearch()" ></i> <div class="vertical-line"></div> <!-- Google microphone SVG --> <img class="search-control mic" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Google_mic.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Microphone" style="width:25px;height:25px;" > <!-- Google Lens SVG --> <img class="search-control lens" src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Google_Lens_Icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Google Lens" style="width:25px;height:25px;" > </div> </div> </header> <!-- ======================================== TABS ======================================== --> <nav class="tabs"> <div class="tab active"> <i class="fa-solid fa-magnifying-glass"></i> All </div> <div class="tab"> <i class="fa-solid fa-location-dot"></i> Maps </div> <div class="tab"> <i class="fa-regular fa-image"></i> Images </div> <div class="tab"> <i class="fa-solid fa-play"></i> Videos </div> <div class="tab"> <i class="fa-regular fa-newspaper"></i> News </div> <div class="tab"> <i class="fa-solid fa-ellipsis"></i> More </div> </nav> <!-- ======================================== RESULTS ======================================== --> <main class="results"> <div class="result-count"> About 4 results </div> <!-- ==================================== MAPS ===================================== --> <section class="result"> <div class="result-source"> <img class="site-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Google_Maps_icon_%282026%29.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Google Maps" > <div class="source-info"> <div class="site-name"> Google Maps </div> <div class="url"> maps.google.com </div> </div> <i class="fa-solid fa-ellipsis-vertical more"></i> </div> <div class="maps-result"> <div class="maps-heading"> <img class="maps-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Google_Maps_icon_%282026%29.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="" > <strong> Places with unusual heat </strong> </div> <div class="location" onclick="openMap()" > Emberfall Lava Caves </div> <div class="rating"> <span class="stars"> ★★★★★ </span> <span style="font-size:13px;color:#5f6368;"> 4.1 · Cave </span> </div> <div class="snippet"> Abandoned volcanic cave system near Crossroads City, CI. <br> <strong> Temporarily closed. </strong> </div> <div class="fake-map"> <i class="fa-solid fa-location-dot map-pin"></i> </div> </div> </section> <!-- ==================================== POLICE ===================================== --> <section class="result"> <div class="result-source"> <img class="site-icon" src="https://static.cdnlogo.com/logos/p/95/police.svg" alt="Police" > <div class="source-info"> <div class="site-name"> Crossroads City Police Department </div> <div class="url"> police.crossroadscity.ci </div> </div> <i class="fa-solid fa-ellipsis-vertical more"></i> </div> <div class="title" onclick="openPolice()" > Emberfall Lava Caves — Public Safety Notice </div> <div class="snippet"> <span class="date"> Updated October 2026 — </span> The Emberfall Lava Caves have been <strong> permanently closed to public access. </strong> Visitors are prohibited from entering the cave system due to unstable terrain and elevated underground temperatures. </div> <div class="warning"> <i class="fa-solid fa-triangle-exclamation"></i> ACCESS RESTRICTED </div> </section> <!-- ==================================== YOUTUBE ===================================== --> <section class="result"> <div class="result-source"> <img class="site-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="YouTube" > <div class="source-info"> <div class="site-name"> YouTube </div> <div class="url"> youtube.com </div> </div> <i class="fa-solid fa-ellipsis-vertical more"></i> </div> <div class="video-card"> <div class="video-thumbnail"> <div class="play-button" onclick="openYouTube()" > <i class="fa-solid fa-play"></i> </div> </div> <div class="video-info"> <div class="youtube-source"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="" > YouTube · Crossroads Explained </div> <div class="video-title" onclick="openYouTube()" > Why You Should NEVER Enter Emberfall Lava Caves </div> <div class="snippet"> 3.2M views · 2 years ago <br><br> What really happened beneath Crossroads City? </div> </div> </div> </section> <!-- ==================================== NOTHINGBUTTYLER ===================================== --> <section class="result creator"> <div class="result-source"> <img class="site-icon website-icon" src="https://www.nicepng.com/png/full/155-1554858_earth-world-wide-web-circle-connect-round-svg.png" alt="Website" > <div class="source-info"> <div class="site-name"> NothingButTyler </div> <div class="url"> nothingbuttyler.example </div> </div> <i class="fa-solid fa-ellipsis-vertical more"></i> </div> <div class="creator-title" onclick="openNBT()" > Subscribe to NothingButTyler </div> <div class="creator-description"> Official NothingButTyler channel. Videos, skits, movies, games, and more. Subscribe to stay updated. </div> </section> </main> <!-- ======================================== MAP PAGE ======================================== --> <div id="mapPage" class="overlay"> <div class="fake-page"> <div class="back" onclick="closePages()"> <i class="fa-solid fa-arrow-left"></i> Back to Search </div> <h1> Emberfall Lava Caves </h1> <p> <i class="fa-solid fa-location-dot"></i> Crossroads City, CI </p> <p> <span class="stars"> ★★★★★ </span> 4.1 · Cave </p> <div class="fake-map" style="height:350px;" > <i class="fa-solid fa-location-dot map-pin"></i> </div> <p> Former volcanic cave system located beneath the northern edge of Crossroads City. </p> <p> <strong> Status: </strong> Permanently closed. </p> </div> </div> <!-- ======================================== POLICE PAGE ======================================== --> <div id="policePage" class="overlay"> <div class="fake-page"> <div class="back" onclick="closePages()"> <i class="fa-solid fa-arrow-left"></i> Back to Search </div> <div class="police-header"> <h1> PUBLIC SAFETY NOTICE </h1> <p> CROSSROADS CITY POLICE DEPARTMENT </p> </div> <h2> Emberfall Lava Caves </h2> <p> File No. CC-4471-EF </p> <p> The Emberfall Lava Caves are classified as a restricted area. </p> <p> The cave system has been abandoned and sealed following repeated reports of dangerous underground conditions. </p> <div class="police-warning"> <i class="fa-solid fa-triangle-exclamation"></i> DO NOT ENTER THE EMBERFALL CAVE SYSTEM. </div> </div> </div> <!-- ======================================== YOUTUBE PAGE ======================================== --> <div id="youtubePage" class="overlay"> <div class="fake-page"> <div class="back" onclick="closePages()"> <i class="fa-solid fa-arrow-left"></i> Back to Search </div> <div class="youtube-page-logo"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="" > YouTube </div> <div class="youtube-thumbnail-large"> <div class="play-button"> <i class="fa-solid fa-play"></i> </div> </div> <h1> Why You Should NEVER Enter Emberfall Lava Caves </h1> <p> Crossroads Explained · 3.2M views </p> <p> The Emberfall caves have been abandoned for years, but strange reports continue to surround the area. </p> <p> This video investigates why authorities refuse to allow anyone inside. </p> </div> </div> <!-- ======================================== NOTHINGBUTTYLER PAGE ======================================== --> <div id="nbtPage" class="overlay"> <div class="fake-page"> <div class="back" onclick="closePages()"> <i class="fa-solid fa-arrow-left"></i> Back to Search </div> <h1> NothingButTyler </h1> <p> Welcome to the official NothingButTyler channel. </p> <button onclick="subscribe()" style=" border:none; background:#cc0000; color:#fff; padding:12px 22px; border-radius:22px; font-weight:bold; cursor:pointer; " > <i class="fa-brands fa-youtube"></i> Subscribe </button> </div> </div> <script> /* ======================================== SEARCH BAR ======================================== */ const searchInput = document.getElementById("searchInput"); searchInput.addEventListener( "keydown", function(event) { if (event.key === "Enter") { searchInput.blur(); } } ); function clearSearch() { searchInput.value = ""; searchInput.focus(); } /* ======================================== PAGE NAVIGATION ======================================== */ function openMap() { document .getElementById("mapPage") .classList.add("active"); } function openPolice() { document .getElementById("policePage") .classList.add("active"); } function openYouTube() { document .getElementById("youtubePage") .classList.add("active"); } function openNBT() { document .getElementById("nbtPage") .classList.add("active"); } function closePages() { document .querySelectorAll(".overlay") .forEach(page => { page.classList.remove("active"); }); } /* ======================================== FAKE SUBSCRIBE ======================================== */ function subscribe() { alert( "Subscribed to NothingButTyler!" ); } </script> </body> </html> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>places with heat in crossroads city, ci - Google Search</title> <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #202124;
+            background: #fff;
+        }
+
+        /* ========================= TOP BAR ========================= */
+        .topbar {
+            padding: 20px 28px 10px;
+            border-bottom: 1px solid #dadce0;
+        }
+
+        .google-logo {
+            margin-bottom: 20px;
+            user-select: none;
+        }
+
+        .google-logo img {
+            width: 92px;
+            height: auto;
+            display: block;
+        }
+
+        /* ========================= SEARCH BAR ========================= */
+        .search-row {
+            display: flex;
+            align-items: center;
+            max-width: 720px;
+        }
+
+        .search-box {
+            width: 100%;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 0 14px 0 18px;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.12);
+        }
+
+        .search-icon {
+            color: #5f6368;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .search-input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            font-size: 16px;
+            color: #202124;
+            background: transparent;
+        }
+
+        .clear-button {
+            border: 0;
+            background: transparent;
+            color: #5f6368;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        .search-divider {
+            width: 1px;
+            height: 28px;
+            background: #dadce0;
+            margin: 0 8px;
+        }
+
+        .search-control {
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        /* The supplied SVGs contain some transparent space around the actual icon, so 32px keeps them visually closer to the intended size. */
+        .mic {
+            width: 25px;
+            height: 25px;
+            margin: 0 7px;
+        }
+
+        .lens {
+            width: 25px;
+            height: 25px;
+            margin: 0 7px;
+        }
+
+        /* ========================= SEARCH TABS ========================= */
+        .tabs {
+            display: flex;
+            gap: 25px;
+            max-width: 720px;
+            margin-top: 18px;
+            padding-left: 8px;
+            color: #5f6368;
+            font-size: 14px;
+        }
+
+        .tab {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding-bottom: 14px;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            color: #1a73e8;
+            border-bottom: 3px solid #1a73e8;
+        }
+
+        /* ========================= RESULTS ========================= */
+        .results {
+            max-width: 720px;
+            padding: 28px 28px 60px;
+        }
+
+        .result {
+            margin-bottom: 32px;
+        }
+
+        .source {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #202124;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .source img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        .result-title {
+            color: #1a0dab;
+            font-size: 20px;
+            margin: 0 0 5px;
+            cursor: pointer;
+        }
+
+        .result-url {
+            color: #188038;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .result-description {
+            color: #4d5156;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .rating {
+            color: #f29900;
+        }
+
+        .closed {
+            color: #d93025;
+            font-weight: 600;
+        }
+
+        /* ========================= FAKE MAP ========================= */
+        .fake-map {
+            width: 100%;
+            height: 170px;
+            margin-top: 12px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(115deg, transparent 46%, rgba(255, 255, 255, 0.7) 47%, transparent 48%), linear-gradient(35deg, transparent 58%, rgba(255, 255, 255, 0.6) 59%, transparent 60%), #dce8d2;
+            border: 1px solid #dadce0;
+        }
+
+        .fake-map::before {
+            content: "";
+            position: absolute;
+            width: 55%;
+            height: 35px;
+            left: 12%;
+            top: 55%;
+            transform: rotate(-18deg);
+            background: #f8d67a;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+
+        .map-pin {
+            position: absolute;
+            left: 52%;
+            top: 43%;
+            color: #d93025;
+            font-size: 38px;
+            transform: translate(-50%, -50%);
+            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+        }
+
+        /* ========================= POLICE NOTICE ========================= */
+        .notice {
+            background: #fce8e6;
+            color: #c5221f;
+            display: inline-block;
+            border-radius: 4px;
+            padding: 4px 8px;
+            margin-top: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ========================= YOUTUBE CARD ========================= */
+        .youtube-card {
+            border: 1px solid #dadce0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 12px;
+            max-width: 560px;
+            cursor: pointer;
+        }
+
+        .youtube-thumb {
+            height: 230px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at 50% 48%, #ffb300 0 7%, transparent 8%), radial-gradient(circle at 48% 55%, #e65100 0 25%, transparent 26%), linear-gradient(145deg, #260b00, #7a1f00 48%, #ff6d00);
+        }
+
+        .youtube-play {
+            width: 68px;
+            height: 48px;
+            border-radius: 14px;
+            background: #ff0000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 25px;
+            padding-left: 3px;
+        }
+
+        .youtube-info {
+            padding: 14px 16px 16px;
+        }
+
+        .youtube-title {
+            color: #202124;
+            font-size: 17px;
+            line-height: 1.35;
+            margin-bottom: 7px;
+        }
+
+        .youtube-meta {
+            color: #5f6368;
+            font-size: 13px;
+        }
+
+        /* ========================= OVERLAYS ========================= */
+        .overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            z-index: 20;
+            overflow-y: auto;
+        }
+
+        .overlay-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 24px;
+            border-bottom: 1px solid #dadce0;
+        }
+
+        .back-button {
+            border: 0;
+            background: transparent;
+            font-size: 22px;
+            color: #5f6368;
+            cursor: pointer;
+        }
+
+        .overlay-content {
+            max-width: 760px;
+            margin: 45px auto;
+            padding: 0 25px;
+        }
+
+        .overlay-content h1 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .overlay-content p {
+            color: #5f6368;
+            line-height: 1.7;
+        }
+
+        .subscribe-button {
+            margin-top: 15px;
+            border: 0;
+            background: #cc0000;
+            color: #fff;
+            padding: 11px 20px;
+            border-radius: 22px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* ========================= MOBILE ========================= */
+        @media (max-width: 700px) {
+            .topbar {
+                padding: 16px 14px 8px;
+            }
+
+            .results {
+                padding: 24px 14px 50px;
+            }
+
+            .tabs {
+                gap: 16px;
+                overflow-x: auto;
+            }
+
+            .tab {
+                white-space: nowrap;
+            }
+
+            .google-logo img {
+                width: 82px;
+            }
+
+            .mic,
+            .lens {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body> <!-- ========================= TOP BAR ========================= -->
+    <header class="topbar"> <!-- Actual Google 2015 SVG -->
+        <div class="google-logo" aria-label="Google"> <img src="https://static.cdnlogo.com/logos/g/48/google-2015.svg" alt="Google"> </div> <!-- SEARCH BAR -->
+        <div class="search-row">
+            <div class="search-box"> <!-- Search icon --> <i class="fa-solid fa-magnifying-glass search-icon"></i> <!-- Search input --> <input id="searchInput" class="search-input" type="text" value="places with heat in Crossroads City, CI" aria-label="Search"> <!-- Clear button --> <button class="clear-button" onclick="clearSearch()" aria-label="Clear search"> <i class="fa-solid fa-xmark"></i> </button> <!-- Divider -->
+                <div class="search-divider"></div> <!-- Google microphone --> <img class="search-control mic" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Google_mic.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Microphone"> <!-- Google Lens --> <img class="search-control lens" src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Google_Lens_Icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Google Lens">
+            </div>
+        </div> <!-- ========================= TABS ========================= -->
+        <nav class="tabs">
+            <div class="tab active"> <i class="fa-solid fa-magnifying-glass"></i> All </div>
+            <div class="tab"> <i class="fa-solid fa-map-location-dot"></i> Maps </div>
+            <div class="tab"> <i class="fa-regular fa-image"></i> Images </div>
+            <div class="tab"> <i class="fa-solid fa-play"></i> Videos </div>
+            <div class="tab"> <i class="fa-regular fa-newspaper"></i> News </div>
+            <div class="tab"> <i class="fa-solid fa-ellipsis"></i> More </div>
+        </nav>
+    </header> <!-- ========================= SEARCH RESULTS ========================= -->
+    <main class="results"> <!-- ========================= GOOGLE MAPS RESULT ========================= -->
+        <section class="result">
+            <div class="source"> <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Google_Maps_icon_%282026%29.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Google Maps"> <span> Google Maps </span> </div>
+            <h2 class="result-title" onclick="openOverlay('mapsOverlay')"> Emberfall Lava Caves </h2>
+            <div class="result-url"> maps.google.com › Emberfall Lava Caves </div>
+            <div class="result-description"> <strong> 8874 Crossroads Frontage Rd, Crossroads City, CI </strong> · <span class="rating"> ★ 4.1 </span> · Cave · <span class="closed"> Permanently closed </span> </div> <!-- Fake map -->
+            <div class="fake-map"> <i class="fa-solid fa-location-dot map-pin"></i> </div>
+        </section> <!-- ========================= POLICE RESULT ========================= -->
+        <section class="result">
+            <div class="source"> <img src="https://static.cdnlogo.com/logos/p/95/police.svg" alt="Police"> <span> Crossroads City Police Department </span> </div>
+            <h2 class="result-title" onclick="openOverlay('policeOverlay')"> Emberfall Lava Caves — Public Safety Notice </h2>
+            <div class="result-url"> crossroads-police.ci › public-notices › emberfall </div>
+            <div class="result-description"> Updated October 2026 — The Emberfall Lava Caves are abandoned and permanently closed to the public. Entry is restricted. </div>
+            <!--<div class="notice"> RESTRICTED AREA </div>-->
+        </section> <!-- ========================= YOUTUBE RESULT ========================= -->
+        <section class="result">
+            <div class="source"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="YouTube"> <span> YouTube </span> </div>
+            <h2 class="result-title" onclick="openOverlay('youtubeOverlay')"> Why You Should NEVER Enter Emberfall Lava Caves </h2>
+            <div class="result-url"> youtube.com › watch </div>
+            <div class="result-description"> What really happened beneath Crossroads City? </div> <!-- YouTube preview -->
+            <div class="youtube-card">
+                <div class="youtube-thumb">
+                    <div class="youtube-play"> <i class="fa-solid fa-play"></i> </div>
+                </div>
+                <div class="youtube-info">
+                    <div class="youtube-title"> Why You Should NEVER Enter Emberfall Lava Caves </div>
+                    <div class="youtube-meta"> 3.2M views · 2 years ago </div>
+                </div>
+            </div>
+        </section> <!-- ========================= NOTHINGBUTTYLER RESULT ========================= -->
+        <section class="result">
+            <div class="source"> <img src="https://www.nicepng.com/png/full/155-1554858_earth-world-wide-web-circle-connect-round-svg.png" alt="Website"> <span> nbtofcl.short.gy </span> </div>
+            <h2 class="result-title" onclick="openOverlay('nbtOverlay')"> Subscribe to NothingButTyler </h2>
+            <div class="result-url"> nbtofcl.short.gy </div>
+            <div class="result-description"> Official NothingButTyler website. Videos, projects, music, movies, skits, and more. </div>
+        </section>
+    </main> <!-- ========================= MAPS OVERLAY ========================= -->
+    <div id="mapsOverlay" class="overlay">
+        <div class="overlay-header"> <button class="back-button" onclick="closeOverlay('mapsOverlay')"> <i class="fa-solid fa-arrow-left"></i> </button> <strong> Google Maps </strong> </div>
+        <div class="overlay-content">
+            <h1> Emberfall Lava Caves </h1>
+            <p> Abandoned cave system beneath Crossroads City. </p>
+            <p> Status: <strong> Temporarily closed </strong> </p>
+            <div class="fake-map" style="height: 300px;"> <i class="fa-solid fa-location-dot map-pin"></i> </div>
+        </div>
+    </div> <!-- ========================= POLICE OVERLAY ========================= -->
+    <div id="policeOverlay" class="overlay">
+        <div class="overlay-header"> <button class="back-button" onclick="closeOverlay('policeOverlay')"> <i class="fa-solid fa-arrow-left"></i> </button> <strong> Crossroads City Police Department </strong> </div>
+        <div class="overlay-content">
+            <h1> Public Safety Notice </h1>
+            <p> The Emberfall Lava Caves are abandoned and permanently closed to the public. </p>
+            <p> Entry into the cave system is restricted. </p>
+            <div class="notice"> RESTRICTED AREA </div>
+        </div>
+    </div> <!-- ========================= YOUTUBE OVERLAY ========================= -->
+    <div id="youtubeOverlay" class="overlay">
+        <div class="overlay-header"> <button class="back-button" onclick="closeOverlay('youtubeOverlay')"> <i class="fa-solid fa-arrow-left"></i> </button> <strong> YouTube </strong> </div>
+        <div class="overlay-content">
+            <h1> Why You Should NEVER Enter Emberfall Lava Caves </h1>
+            <p> What really happened beneath Crossroads City? </p>
+            <div class="youtube-thumb" style=" height: 340px; border-radius: 12px; ">
+                <div class="youtube-play"> <i class="fa-solid fa-play"></i> </div>
+            </div>
+        </div>
+    </div> <!-- ========================= NOTHINGBUTTYLER OVERLAY ========================= -->
+    <div id="nbtOverlay" class="overlay">
+        <div class="overlay-header"> <button class="back-button" onclick="closeOverlay('nbtOverlay')"> <i class="fa-solid fa-arrow-left"></i> </button> <strong> NothingButTyler </strong> </div>
+        <div class="overlay-content">
+            <h1> NothingButTyler </h1>
+            <p> Official website for NothingButTyler. </p> <button class="subscribe-button" onclick="subscribe()"> Subscribe </button>
+        </div>
+    </div> <!-- ========================= JAVASCRIPT ========================= -->
+    <script>
+        function clearSearch() {
+            document.getElementById("searchInput").value = "";
+        }
+
+        function openOverlay(id) {
+            document.getElementById(id).style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeOverlay(id) {
+            document.getElementById(id).style.display = "none";
+            document.body.style.overflow = "";
+        }
+
+        function subscribe() {
+            alert("Thanks for subscribing to NothingButTyler!");
+        }
+    </script>
+</body>
+
+  </html>
