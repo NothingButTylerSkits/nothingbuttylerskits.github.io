@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mickey Mouse - Characters | NothingButTyler Skits</title>
+
+    <meta name="description" content="Meet Mickey Mouse, the chaotic, loyal, and kind-hearted main character of the MCH specials.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://nothingbuttylerskits.github.io/assets/files/styles.css">
+
+    <style>
+        /* PROFILE PAGE */
+
+        .profile-hero {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 150px 0 65px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            margin-bottom: 35px;
+        }
+
+        .breadcrumb a {
+            color: var(--ice);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--ice-light);
+        }
+
+        .profile-header {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            align-items: center;
+            gap: 55px;
+            padding: 40px;
+            border-radius: 30px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .profile-picture {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 25px;
+            border: 3px solid rgba(56, 189, 248, 0.25);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .profile-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 15px;
+            border-radius: 50px;
+            color: var(--gold);
+            background: rgba(255, 201, 77, 0.07);
+            border: 1px solid rgba(255, 201, 77, 0.25);
+            font-size: 0.68rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .profile-info h1 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .profile-info h1 span {
+            color: var(--ice);
+        }
+
+        .profile-description {
+            max-width: 650px;
+            color: var(--muted);
+            line-height: 1.85;
+            font-size: 1rem;
+        }
+
+        .profile-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .meta-item i {
+            color: var(--ice);
+        }
+
+        /* CONTENT SECTIONS */
+
+        .profile-section {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 55px 0;
+        }
+
+        .profile-section-heading {
+            margin-bottom: 30px;
+        }
+
+        .profile-section-heading .eyebrow {
+            margin-bottom: 12px;
+        }
+
+        .profile-section-heading h2 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            line-height: 1.05;
+        }
+
+        .profile-section-heading p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-top: 12px;
+            max-width: 700px;
+        }
+
+        .profile-card {
+            padding: 35px;
+            border-radius: 25px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .profile-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .profile-card p {
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 0.95rem;
+        }
+
+        .profile-card p + p {
+            margin-top: 15px;
+        }
+
+        .profile-card-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            color: var(--ice);
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            font-size: 1.3rem;
+            margin-bottom: 22px;
+        }
+
+        /* QUOTE */
+
+        .coach-quote {
+            position: relative;
+            padding: 35px;
+            margin-top: 22px;
+            border-radius: 25px;
+            background: rgba(255, 201, 77, 0.055);
+            border: 1px solid rgba(255, 201, 77, 0.2);
+        }
+
+        .coach-quote i {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .coach-quote h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            color: var(--gold);
+            line-height: 1.2;
+        }
+
+        .coach-quote p {
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
+        /* FUN FACTS */
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .fact-card {
+            padding: 27px;
+            border-radius: 22px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 201, 77, 0.35);
+        }
+
+        .fact-card i {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+
+        .fact-card h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .fact-card p {
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.75;
+        }
+
+        /* APPEARANCES */
+
+        .appearance-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .appearance-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            padding: 27px;
+            border-radius: 22px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .appearance-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        .appearance-icon {
+            width: 65px;
+            height: 65px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            background: rgba(255, 201, 77, 0.1);
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .appearance-label {
+            display: inline-block;
+            color: var(--ice);
+            font-size: 0.65rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .appearance-card h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 9px;
+        }
+
+        .appearance-card p {
+            color: var(--muted);
+            font-size: 0.87rem;
+            line-height: 1.8;
+        }
+
+        .appearance-card .appearance-extra {
+            margin-top: 10px;
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            position: relative;
+            display: grid;
+            gap: 25px;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(
+                to bottom,
+                var(--ice),
+                rgba(255, 201, 77, 0.15)
+            );
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 5px 0 5px 20px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -29px;
+            top: 9px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--ice);
+            border: 3px solid var(--midnight);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .timeline-item h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 7px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        /* BOTTOM CTA */
+
+        .profile-cta {
+            width: min(1200px, 92%);
+            margin: 55px auto 100px;
+            padding: 45px;
+            text-align: center;
+            border-radius: 30px;
+            background: linear-gradient(
+                135deg,
+                rgba(56, 189, 248, 0.11),
+                rgba(255, 201, 77, 0.08)
+            );
+            border: 1px solid var(--border);
+        }
+
+        .profile-cta i {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .profile-cta h2 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px;
+        }
+
+        .profile-cta p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .profile-header {
+                grid-template-columns: 220px 1fr;
+                gap: 30px;
+                padding: 28px;
+            }
+
+            .fact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .profile-hero {
+                padding-top: 120px;
+            }
+
+            .profile-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 25px;
+            }
+
+            .profile-picture {
+                width: min(230px, 75%);
+                margin: auto;
+            }
+
+            .profile-meta {
+                justify-content: center;
+            }
+
+            .profile-section {
+                padding: 40px 0;
+            }
+
+            .profile-card {
+                padding: 25px;
+            }
+
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .appearance-card {
+                flex-direction: column;
+            }
+
+            .profile-cta {
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="background-lights">
+        <div class="spotlight one"></div>
+        <div class="spotlight two"></div>
+
+        <i class="fa-solid fa-film floating-icon icon-one"></i>
+        <i class="fa-solid fa-star floating-icon icon-two"></i>
+        <i class="fa-solid fa-clapperboard floating-icon icon-three"></i>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-container">
+
+            <a href="/" class="brand">
+                <div class="brand-icon">
+                    <img src="https://nothingbuttylerskits.github.io/assets/images/logo.jpg" alt="NothingButTyler Skits">
+                </div>
+
+                <div class="brand-text">
+                    NothingButTyler
+                    <small>SKITS</small>
+                </div>
+            </a>
+
+            <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="/">Skits</a>
+                <a href="/characters.html" class="active">Characters</a>
+                <a href="/behind-the-scenes.html">Behind the Scenes</a>
+                <a href="https://nothingbuttyler.is-a-good.dev/" class="peak-button">
+                    <i class="fa-solid fa-mountain"></i>
+                    Back to Peak
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- PROFILE HERO -->
+    <header class="profile-hero">
+
+        <div class="breadcrumb">
+            <a href="/">Skits</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="/characters.html">Characters</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Mickey Mouse</span>
+        </div>
+
+        <div class="profile-header">
+
+            <div class="profile-picture">
+                <img
+                    src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Mickey_1x1.jpg"
+                    alt="Mickey Mouse"
+                >
+            </div>
+
+            <div class="profile-info">
+
+                <div class="profile-category">
+                    <i class="fa-solid fa-star"></i>
+                    MCH Character
+                </div>
+
+                <h1><span>Mickey</span> Mouse</h1>
+
+                <p class="profile-description">
+                    The main character of the MCH specials. Mickey is
+                    kind, loyal, and always trying to become a better
+                    person — although he somehow manages to cause chaos
+                    almost everywhere he goes.
+                </p>
+
+                <div class="profile-meta">
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-film"></i>
+                        Main Character
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-bolt"></i>
+                        Chaos Creator
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-house"></i>
+                        Clubhouse Resident
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ABOUT -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">GET TO KNOW HIM</div>
+            <h2>About Mickey</h2>
+            <p>
+                A star in the making, a loyal friend, and possibly
+                the biggest source of chaos in the clubhouse.
+            </p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-card-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <p>
+                <strong>Mickey Mouse</strong> is the main character
+                of the MCH specials, and one thing is certain:
+                he always seems to find a way to cause chaos.
+                Whether he's around his friends, inside the clubhouse,
+                or somewhere else entirely, trouble somehow follows him.
+            </p>
+
+            <p>
+                Even as a kid, Mickey always wanted to become a star.
+                He dreamed of being popular while also being
+                a kind and loyal person. As he grew up, he met
+                some amazing friends who would eventually become
+                a big part of his life.
+            </p>
+
+            <p>
+                Among those friends were <strong>Minnie</strong>,
+                <strong>Donald</strong>, and <strong>Goofy</strong>.
+                Later, Donald met <strong>Daisy</strong>, and the
+                group of friends continued growing. Over time,
+                Donald and Daisy became a couple, followed by
+                Mickey and Minnie, and eventually Goofy and Clarabelle.
+            </p>
+
+            <p>
+                Minnie also got a dog named <strong>Pluto</strong>.
+                That's how the clubhouse began! The group eventually
+                grew older but continued staying together there.
+                It's a very big clubhouse, giving everyone plenty
+                of room to roam around and do their own thing.
+            </p>
+
+            <p>
+                Mickey's personality is a mixture of kindness,
+                loyalty, and unpredictable chaos. Sometimes
+                he starts the trouble himself, while other times
+                he somehow gets caught up in everyone else's.
+                Either way, things rarely stay quiet for long.
+            </p>
+
+            <p>
+                Despite all the chaos, Mickey is also trying
+                to become a better person. He isn't perfect,
+                but he wants to improve and do better.
+                That side of him is just as important as
+                his troublemaking personality.
+            </p>
+
+            <p>
+                At the center of it all, Mickey is someone
+                who cares about his friends, enjoys being
+                around them, and still dreams of becoming
+                the star he always wanted to be.
+            </p>
+
+        </div>
+
+        <div class="coach-quote">
+
+            <i class="fa-solid fa-quote-left"></i>
+
+            <h3>Always causing chaos, but always trying to be better.</h3>
+
+            <p>
+                A pretty fitting description of Mickey Mouse!
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- HIS STORY -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">HIS JOURNEY</div>
+            <h2>How He Started</h2>
+            <p>
+                From a childhood dream of becoming a star
+                to building a life with his closest friends.
+            </p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-card-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <p>
+                Mickey's story starts with a simple dream:
+                he wanted to be a star. Even when he was young,
+                he hoped to become popular while remaining
+                kind and loyal to the people around him.
+            </p>
+
+            <p>
+                As he grew up, Mickey met Minnie, Donald,
+                and Goofy. Their friendships became an important
+                part of his life, and eventually their group
+                grew as Donald met Daisy.
+            </p>
+
+            <p>
+                Relationships began forming within the group.
+                Donald and Daisy became a couple, Mickey and
+                Minnie got together, and Goofy eventually
+                became a couple with Clarabelle.
+            </p>
+
+            <p>
+                When Minnie got Pluto, the clubhouse came
+                into the picture. It became a shared home
+                for the group, and even as everyone got older,
+                they continued living there together.
+            </p>
+
+            <p>
+                As the main character of the MCH specials,
+                Mickey's adventures are full of unexpected
+                moments, arguments, friendships, and plenty
+                of chaos. He's still learning and trying
+                to become a better person along the way.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FUN FACTS -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">DID YOU KNOW?</div>
+            <h2>Fun Facts About Mickey</h2>
+            <p>
+                A few interesting details about Mickey,
+                his friendships, and his life in the clubhouse.
+            </p>
+        </div>
+
+        <div class="fact-grid">
+
+            <div class="fact-card">
+                <i class="fa-solid fa-star"></i>
+                <h3>Dreams of Being a Star</h3>
+                <p>
+                    Even as a kid, Mickey wanted to become
+                    a star and be popular.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Chaos Follows Him</h3>
+                <p>
+                    Whether he starts it himself or gets
+                    dragged into it, Mickey always seems
+                    to find chaos.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Trying to Improve</h3>
+                <p>
+                    Beneath all the chaos, Mickey is
+                    genuinely trying to become a better person.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>A Big Friend Group</h3>
+                <p>
+                    His close circle includes Minnie,
+                    Donald, Daisy, Goofy, and Clarabelle.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-house"></i>
+                <h3>The Clubhouse</h3>
+                <p>
+                    Mickey and his friends continued
+                    living together in their large clubhouse
+                    as they got older.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-dog"></i>
+                <h3>Pluto Started It</h3>
+                <p>
+                    Minnie getting Pluto was the event
+                    that led to the clubhouse beginning.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-user-group"></i>
+                <h3>Three Couples</h3>
+                <p>
+                    Mickey and Minnie, Donald and Daisy,
+                    and Goofy and Clarabelle are the
+                    three couples in the friend group.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-clapperboard"></i>
+                <h3>Main Character</h3>
+                <p>
+                    Mickey is the main character of
+                    the MCH MRTDTS specials.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-face-grin-stars"></i>
+                <h3>Sweet and Chaotic</h3>
+                <p>
+                    Mickey can be sweet with his friends,
+                    but he and Minnie also have their
+                    fair share of arguments.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- OTHER APPEARANCES -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">ON SCREEN</div>
+            <h2>Other Appearances</h2>
+            <p>
+                Mickey takes center stage in the MCH specials
+                and is the main character of the series.
+            </p>
+        </div>
+
+        <div class="appearance-list">
+
+            <div class="appearance-card">
+
+                <div class="appearance-icon">
+                    <i class="fa-solid fa-film"></i>
+                </div>
+
+                <div>
+
+                    <div class="appearance-label">
+                        MCH SPECIAL
+                    </div>
+
+                    <h3>Mickey Refuses To Do The Dishes 1</h3>
+
+                    <p>
+                        Mickey takes the leading role in the
+                        first MCH special. After refusing to
+                        do the dishes, he runs away from Minnie
+                        and unexpectedly meets Bill. Their
+                        friendship becomes an important part
+                        of the events that follow.
+                    </p>
+
+                    <p class="appearance-extra">
+                        The beginning of Bill and Mickey's friendship!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="appearance-card">
+
+                <div class="appearance-icon">
+                    <i class="fa-solid fa-film"></i>
+                </div>
+
+                <div>
+
+                    <div class="appearance-label">
+                        MCH SPECIAL
+                    </div>
+
+                    <h3>Mickey Refuses To Do The Dishes 2</h3>
+
+                    <p>
+                        Mickey returns as the main character
+                        in the second special. His adventures
+                        with the group continue, with Bill
+                        still living with him.
+                    </p>
+
+                    <p class="appearance-extra">
+                        The story continues!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">THE STORY SO FAR</div>
+            <h2>Mickey's Journey</h2>
+            <p>
+                A look at some of the important stages
+                of Mickey's life and friendships.
+            </p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <h3>A Childhood Dream</h3>
+                    <p>
+                        Mickey grows up wanting to become
+                        a star, be popular, and remain
+                        kind and loyal.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Meeting His Friends</h3>
+                    <p>
+                        Mickey meets Minnie, Donald,
+                        and Goofy, forming friendships
+                        that become a big part of his life.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>The Group Grows</h3>
+                    <p>
+                        Donald meets Daisy, and the group
+                        becomes even closer.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Relationships Begin</h3>
+                    <p>
+                        Donald and Daisy, Mickey and Minnie,
+                        and Goofy and Clarabelle become couples.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>The Clubhouse</h3>
+                    <p>
+                        Minnie gets Pluto, and the clubhouse
+                        begins. It eventually becomes a shared
+                        home for the whole group.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>MCH MRTDTS 1</h3>
+                    <p>
+                        Mickey's story takes center stage
+                        in the first special, where he meets
+                        Bill after running away from Minnie.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>MCH MRTDTS 2</h3>
+                    <p>
+                        Mickey continues his adventures
+                        with his friends, including Bill,
+                        who still lives with him.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="profile-cta reveal">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h2>Meet the Rest of the Cast</h2>
+
+        <p>
+            Mickey is just one part of the NothingButTyler
+            Skits universe. Head back to the character directory
+            to explore the rest of the cast.
+        </p>
+
+        <a href="/characters.html" class="button button-primary">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Characters
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            NothingButTyler <span>Skits</span>
+        </div>
+
+        <p class="footer-text">
+            Comedy. Characters. Chaos.
+            <br><br>
+            NothingButTyler © 2026
+        </p>
+
+    </footer>
+
+    <script>
+        // NAVIGATION
+
+        const navbar = document.getElementById("navbar");
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+
+        window.addEventListener("scroll", () => {
+            navbar.classList.toggle("scrolled", window.scrollY > 30);
+        });
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", isOpen);
+
+            menuButton.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        // SCROLL REVEAL
+
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        document.querySelectorAll(".reveal").forEach(element => {
+            revealObserver.observe(element);
+        });
+    </script>
+
+</body>
+</html>
