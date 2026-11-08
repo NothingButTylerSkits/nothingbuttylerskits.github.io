@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nurse - Characters | NothingButTyler Skits</title>
+
+    <meta name="description" content="Meet Nurse, the kind and helpful hospital worker from the MCH Special, Mickey Refuses to do the Dishes.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://nothingbuttylerskits.github.io/assets/files/styles.css">
+
+    <style>
+        /* PROFILE PAGE */
+
+        .profile-hero {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 150px 0 65px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            margin-bottom: 35px;
+        }
+
+        .breadcrumb a {
+            color: var(--ice);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--ice-light);
+        }
+
+        .profile-header {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            align-items: center;
+            gap: 55px;
+            padding: 40px;
+            border-radius: 30px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .profile-picture {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 25px;
+            border: 3px solid rgba(56, 189, 248, 0.25);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .profile-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 15px;
+            border-radius: 50px;
+            color: var(--gold);
+            background: rgba(255, 201, 77, 0.07);
+            border: 1px solid rgba(255, 201, 77, 0.25);
+            font-size: 0.68rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .profile-info h1 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .profile-info h1 span {
+            color: var(--ice);
+        }
+
+        .profile-description {
+            max-width: 650px;
+            color: var(--muted);
+            line-height: 1.85;
+            font-size: 1rem;
+        }
+
+        .profile-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .meta-item i {
+            color: var(--ice);
+        }
+
+        /* CONTENT SECTIONS */
+
+        .profile-section {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 55px 0;
+        }
+
+        .profile-section-heading {
+            margin-bottom: 30px;
+        }
+
+        .profile-section-heading .eyebrow {
+            margin-bottom: 12px;
+        }
+
+        .profile-section-heading h2 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            line-height: 1.05;
+        }
+
+        .profile-section-heading p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-top: 12px;
+            max-width: 700px;
+        }
+
+        .profile-card {
+            padding: 35px;
+            border-radius: 25px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .profile-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .profile-card p {
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 0.95rem;
+        }
+
+        .profile-card p + p {
+            margin-top: 15px;
+        }
+
+        .profile-card-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            color: var(--ice);
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            font-size: 1.3rem;
+            margin-bottom: 22px;
+        }
+
+        /* QUOTE */
+
+        .coach-quote {
+            position: relative;
+            padding: 35px;
+            margin-top: 22px;
+            border-radius: 25px;
+            background: rgba(255, 201, 77, 0.055);
+            border: 1px solid rgba(255, 201, 77, 0.2);
+        }
+
+        .coach-quote i {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .coach-quote h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            color: var(--gold);
+            line-height: 1.2;
+        }
+
+        .coach-quote p {
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
+        /* FUN FACTS */
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .fact-card {
+            padding: 27px;
+            border-radius: 22px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 201, 77, 0.35);
+        }
+
+        .fact-card i {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+
+        .fact-card h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .fact-card p {
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.75;
+        }
+
+        /* APPEARANCES */
+
+        .appearance-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .appearance-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            padding: 27px;
+            border-radius: 22px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .appearance-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        .appearance-icon {
+            width: 65px;
+            height: 65px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            background: rgba(255, 201, 77, 0.1);
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .appearance-label {
+            display: inline-block;
+            color: var(--ice);
+            font-size: 0.65rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .appearance-card h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 9px;
+        }
+
+        .appearance-card p {
+            color: var(--muted);
+            font-size: 0.87rem;
+            line-height: 1.8;
+        }
+
+        .appearance-card .appearance-extra {
+            margin-top: 10px;
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            position: relative;
+            display: grid;
+            gap: 25px;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(
+                to bottom,
+                var(--ice),
+                rgba(255, 201, 77, 0.15)
+            );
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 5px 0 5px 20px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -29px;
+            top: 9px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--ice);
+            border: 3px solid var(--midnight);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .timeline-item h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 7px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        /* BOTTOM CTA */
+
+        .profile-cta {
+            width: min(1200px, 92%);
+            margin: 55px auto 100px;
+            padding: 45px;
+            text-align: center;
+            border-radius: 30px;
+            background: linear-gradient(
+                135deg,
+                rgba(56, 189, 248, 0.11),
+                rgba(255, 201, 77, 0.08)
+            );
+            border: 1px solid var(--border);
+        }
+
+        .profile-cta i {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .profile-cta h2 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px;
+        }
+
+        .profile-cta p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .profile-header {
+                grid-template-columns: 220px 1fr;
+                gap: 30px;
+                padding: 28px;
+            }
+
+            .fact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .profile-hero {
+                padding-top: 120px;
+            }
+
+            .profile-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 25px;
+            }
+
+            .profile-picture {
+                width: min(230px, 75%);
+                margin: auto;
+            }
+
+            .profile-meta {
+                justify-content: center;
+            }
+
+            .profile-section {
+                padding: 40px 0;
+            }
+
+            .profile-card {
+                padding: 25px;
+            }
+
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .appearance-card {
+                flex-direction: column;
+            }
+
+            .profile-cta {
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="background-lights">
+        <div class="spotlight one"></div>
+        <div class="spotlight two"></div>
+
+        <i class="fa-solid fa-film floating-icon icon-one"></i>
+        <i class="fa-solid fa-star floating-icon icon-two"></i>
+        <i class="fa-solid fa-clapperboard floating-icon icon-three"></i>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-container">
+
+            <a href="/" class="brand">
+                <div class="brand-icon">
+                    <img src="https://nothingbuttylerskits.github.io/assets/images/logo.png" alt="NothingButTyler Skits">
+                </div>
+
+                <div class="brand-text">
+                    NothingButTyler
+                    <small>SKITS</small>
+                </div>
+            </a>
+
+            <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="/">Skits</a>
+                <a href="/characters.html" class="active">Characters</a>
+                <a href="/behind-the-scenes.html">Behind the Scenes</a>
+                <a href="https://nothingbuttyler.github.io/" class="peak-button">
+                    <i class="fa-solid fa-mountain"></i>
+                    Back to Peak
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- PROFILE HERO -->
+    <header class="profile-hero">
+
+        <div class="breadcrumb">
+            <a href="/">Skits</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="/characters.html">Characters</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Nurse</span>
+        </div>
+
+        <div class="profile-header">
+
+            <div class="profile-picture">
+                <!-- Replace this placeholder with Nurse's actual profile picture URL -->
+                <img
+                    src="REPLACE-WITH-NURSE-PROFILE-IMAGE-URL"
+                    alt="Nurse"
+                >
+            </div>
+
+            <div class="profile-info">
+
+                <div class="profile-category">
+                    <i class="fa-solid fa-star"></i>
+                    MCH Character
+                </div>
+
+                <h1><span>Nurse</span></h1>
+
+                <p class="profile-description">
+                    A kind and chill nurse from Crossroads City Hospital.
+                    He's known for helping save Bill in MCH MRTDTS 1
+                    and lending a hand to Goofy and Daisy during
+                    the chaos of MCH MRTDTS 2.
+                </p>
+
+                <div class="profile-meta">
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-user-nurse"></i>
+                        Nurse
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-hospital"></i>
+                        Hospital Staff
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-star"></i>
+                        MCH Character
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ABOUT -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">GET TO KNOW HIM</div>
+            <h2>About Nurse</h2>
+            <p>A helpful face at Crossroads City Hospital.</p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-card-icon">
+                <i class="fa-solid fa-user-nurse"></i>
+            </div>
+
+            <p>
+                Nurse might not be known for a whole lot just yet,
+                but he's already had some important moments in the
+                NothingButTyler Skits universe. He's a kind, chill
+                nurse who works at Crossroads City Hospital in
+                Crossroads City, CI.
+            </p>
+
+            <p>
+                One of his most memorable moments happens in
+                MCH MRTDTS 1, where he helps save Bill's life
+                after Copsillean Mouse creates a dangerous
+                situation involving a murder tase.
+            </p>
+
+            <p>
+                Nurse also returns in MCH MRTDTS 2. This time,
+                he briefly takes on a front desk role at the
+                hospital, before helping out with Goofy and Daisy
+                as all sorts of chaos unfolds.
+            </p>
+
+            <p>
+                Even when things get a little unpredictable,
+                Nurse remains a helpful presence around the
+                hospital. He's one of those characters who
+                is simply there to lend a hand when needed.
+            </p>
+
+            <p>
+                One thing worth noting: Nurse's actual name
+                hasn't been revealed in any of the skits so far.
+                For now, everyone just knows him as Nurse!
+            </p>
+
+        </div>
+
+        <div class="coach-quote">
+
+            <i class="fa-solid fa-quote-left"></i>
+
+            <h3>Always here to help :)</h3>
+
+            <p>
+                A fitting description for Nurse and his role
+                around Crossroads City Hospital.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- HIS ROLE -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">ON THE JOB</div>
+            <h2>At Crossroads City Hospital</h2>
+            <p>
+                From helping patients to handling the front desk,
+                Nurse has had a few different responsibilities.
+            </p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-card-icon">
+                <i class="fa-solid fa-hospital-user"></i>
+            </div>
+
+            <p>
+                Nurse works at Crossroads City Hospital,
+                located in Crossroads City, CI. He's one of
+                the hospital's familiar faces and is always
+                ready to help when something comes up.
+            </p>
+
+            <p>
+                In MCH MRTDTS 1, Nurse plays an important role
+                when Bill needs help. His actions make this
+                one of the most memorable moments involving
+                the character.
+            </p>
+
+            <p>
+                In MCH MRTDTS 2, viewers get to see another
+                side of his hospital work when he briefly
+                works at the front desk. He also helps
+                Goofy and Daisy during their hospital visit.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- MEMORABLE MOMENTS -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">THE HIGHLIGHTS</div>
+            <h2>Nurse's Memorable Moments</h2>
+            <p>
+                A few moments that helped make Nurse
+                a recognizable part of the MCH specials.
+            </p>
+        </div>
+
+        <div class="fact-grid">
+
+            <div class="fact-card">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <h3>Saving Bill</h3>
+                <p>
+                    Nurse helps save Bill's life in MCH MRTDTS 1
+                    after Copsillean Mouse creates a dangerous
+                    situation involving a murder tase.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-clipboard"></i>
+                <h3>Front Desk Duty</h3>
+                <p>
+                    In MCH MRTDTS 2, Nurse briefly takes on
+                    the role of the hospital's front desk worker.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <h3>Helping Goofy & Daisy</h3>
+                <p>
+                    Nurse lends a hand to Goofy and Daisy
+                    during their visit in MCH MRTDTS 2.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- OTHER APPEARANCES -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">ON SCREEN</div>
+            <h2>Other Appearances</h2>
+            <p>
+                Nurse has appeared in both parts of the
+                MCH Special, Mickey Refuses to do the Dishes.
+            </p>
+        </div>
+
+        <div class="appearance-list">
+
+            <!-- MCH MRTDTS 1 -->
+            <div class="appearance-card">
+
+                <div class="appearance-icon">
+                    <i class="fa-solid fa-hospital"></i>
+                </div>
+
+                <div>
+
+                    <div class="appearance-label">
+                        MCH SPECIAL
+                    </div>
+
+                    <h3>MCH MRTDTS 1</h3>
+
+                    <p>
+                        Nurse makes one of his most important
+                        appearances in the first MCH special.
+                        He's known for helping save Bill's life
+                        after Copsillean Mouse creates a
+                        dangerous situation.
+                    </p>
+
+                    <p class="appearance-extra">
+                        One of Nurse's most memorable moments!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- MCH MRTDTS 2 -->
+            <div class="appearance-card">
+
+                <div class="appearance-icon">
+                    <i class="fa-solid fa-user-nurse"></i>
+                </div>
+
+                <div>
+
+                    <div class="appearance-label">
+                        MCH SPECIAL
+                    </div>
+
+                    <h3>MCH MRTDTS 2</h3>
+
+                    <p>
+                        Nurse returns for the second part
+                        of the MCH special. He briefly works
+                        at the hospital front desk and also
+                        helps out with Goofy and Daisy.
+                    </p>
+
+                    <p class="appearance-extra">
+                        A familiar face back at the hospital!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FUN FACTS -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">DID YOU KNOW?</div>
+            <h2>Fun Facts About Nurse</h2>
+            <p>
+                A few interesting details about this
+                helpful hospital worker.
+            </p>
+        </div>
+
+        <div class="fact-grid">
+
+            <div class="fact-card">
+                <i class="fa-solid fa-id-card"></i>
+                <h3>No Name Revealed</h3>
+                <p>
+                    His actual name hasn't been mentioned
+                    in any of the skits so far. He's simply
+                    known as Nurse.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <h3>Bill's Helper</h3>
+                <p>
+                    Nurse is known for helping save Bill
+                    in the first MCH MRTDTS special.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-hospital"></i>
+                <h3>Hospital Worker</h3>
+                <p>
+                    He works at Crossroads City Hospital
+                    in Crossroads City, CI.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <h3>Front Desk Experience</h3>
+                <p>
+                    Nurse briefly works at the hospital's
+                    front desk in MCH MRTDTS 2.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-people-group"></i>
+                <h3>Helpful to Others</h3>
+                <p>
+                    In the second special, he helps out
+                    with Goofy and Daisy during their visit.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-film"></i>
+                <h3>Two MCH Appearances</h3>
+                <p>
+                    Nurse has appeared in both MCH MRTDTS 1
+                    and MCH MRTDTS 2.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="profile-cta reveal">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h2>Meet the Rest of the Cast</h2>
+
+        <p>
+            Nurse is just one part of the NothingButTyler
+            Skits universe. Head back to the character directory
+            to explore the rest of the cast.
+        </p>
+
+        <a href="/characters.html" class="button button-primary">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Characters
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            NothingButTyler <span>Skits</span>
+        </div>
+
+        <p class="footer-text">
+            Comedy. Characters. Chaos.
+            <br><br>
+            NothingButTyler © 2026
+        </p>
+
+    </footer>
+
+    <script>
+        // NAVIGATION
+
+        const navbar = document.getElementById("navbar");
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+
+        window.addEventListener("scroll", () => {
+            navbar.classList.toggle("scrolled", window.scrollY > 30);
+        });
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", isOpen);
+
+            menuButton.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        // SCROLL REVEAL
+
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        document.querySelectorAll(".reveal").forEach(element => {
+            revealObserver.observe(element);
+        });
+    </script>
+
+</body>
+</html>
