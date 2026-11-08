@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters | NothingButTyler Skits</title>
+    <meta name="description" content="Meet the characters of NothingButTyler Skits.">
+
+    <!-- Icons and fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Shared NothingButTyler Skits CSS -->
+    <link rel="stylesheet" href="https://nothingbuttylerskits.github.io/assets/files/styles.css">
+
+    <style>
+        /* DIRECTORY HERO */
+        .directory-hero {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 145px 0 55px;
+            text-align: center;
+        }
+
+        .directory-hero h1 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin: 20px 0;
+        }
+
+        .directory-hero h1 span {
+            color: var(--ice);
+            text-shadow: 0 0 35px rgba(56, 189, 248, 0.22);
+        }
+
+        .directory-description {
+            max-width: 680px;
+            margin: auto;
+            color: var(--muted);
+            line-height: 1.85;
+        }
+
+        .directory-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 25px;
+            padding: 10px 16px;
+            border: 1px solid rgba(56, 189, 248, 0.22);
+            border-radius: 50px;
+            background: rgba(56, 189, 248, 0.06);
+            color: var(--ice);
+            font-size: .72rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* TOOLBAR */
+        .directory-toolbar {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            margin-bottom: 32px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            background: var(--glass);
+        }
+
+        .directory-toolbar-top {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .directory-search {
+            position: relative;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .directory-search > i {
+            position: absolute;
+            top: 50%;
+            left: 18px;
+            transform: translateY(-50%);
+            color: var(--ice);
+            pointer-events: none;
+        }
+
+        .directory-search input {
+            width: 100%;
+            min-height: 52px;
+            padding: 14px 45px 14px 48px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            outline: none;
+            background: rgba(8, 13, 27, .65);
+            color: var(--white);
+            font: inherit;
+            font-size: .88rem;
+        }
+
+        .directory-search input::placeholder {
+            color: var(--muted);
+        }
+
+        .directory-search input:focus {
+            border-color: var(--ice);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, .1);
+        }
+
+        .clear-search {
+            position: absolute;
+            top: 50%;
+            right: 13px;
+            display: none;
+            place-items: center;
+            width: 30px;
+            height: 30px;
+            transform: translateY(-50%);
+            border: none;
+            border-radius: 9px;
+            background: rgba(255, 255, 255, .07);
+            color: var(--muted);
+            cursor: pointer;
+        }
+
+        .clear-search.visible {
+            display: grid;
+        }
+
+        .view-controls {
+            display: flex;
+            flex-shrink: 0;
+            gap: 5px;
+            padding: 5px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: rgba(8, 13, 27, .65);
+        }
+
+        .view-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 40px;
+            padding: 0 13px;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            background: transparent;
+            color: var(--muted);
+            font: inherit;
+            font-size: .75rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .view-button.active {
+            color: var(--midnight);
+            background: var(--ice);
+        }
+
+        /* FILTERS */
+        .directory-filter-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 5px;
+            color: var(--muted);
+            font-size: .7rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .filter-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 38px;
+            padding: 9px 14px;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, .025);
+            color: var(--muted);
+            font: inherit;
+            font-size: .72rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .filter-button:hover {
+            color: var(--white);
+            border-color: rgba(56, 189, 248, .4);
+        }
+
+        .filter-button.active {
+            color: var(--ice);
+            border-color: rgba(56, 189, 248, .4);
+            background: rgba(56, 189, 248, .09);
+        }
+
+        .filter-number {
+            display: inline-grid;
+            place-items: center;
+            min-width: 21px;
+            height: 21px;
+            padding: 0 5px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, .07);
+            font-size: .65rem;
+        }
+
+        /* RESULTS */
+        .directory-results-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .directory-results-header h2 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.6rem;
+        }
+
+        .directory-results-header h2 span {
+            color: var(--ice);
+        }
+
+        .directory-sort-label {
+            color: var(--muted);
+            font-size: .72rem;
+        }
+
+        /* CHARACTER CARDS */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            align-items: stretch;
+            gap: 18px;
+        }
+
+        .directory-grid .character-link {
+            min-width: 0;
+            border-radius: 22px;
+        }
+
+        .directory-grid .character {
+            height: 100%;
+            padding: 27px 18px 23px;
+            overflow: hidden;
+        }
+
+        .directory-grid .character-image {
+            width: 104px;
+            height: 104px;
+            margin-bottom: 18px;
+        }
+
+        .directory-grid .character h3 {
+            overflow-wrap: anywhere;
+            transition: color .25s ease;
+        }
+
+        .directory-grid .character p {
+            font-size: .75rem;
+            line-height: 1.6;
+        }
+
+        .directory-grid .character-link:hover h3 {
+            color: var(--ice);
+        }
+
+        .character-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 15px;
+            padding: 6px 10px;
+            border: 1px solid rgba(56, 189, 248, .2);
+            border-radius: 50px;
+            background: rgba(56, 189, 248, .07);
+            color: var(--ice);
+            font-size: .6rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .character-category.guest {
+            border-color: rgba(255, 201, 77, .25);
+            background: rgba(255, 201, 77, .07);
+            color: var(--gold);
+        }
+
+        .character-open {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 17px;
+            color: var(--muted);
+            font-size: .65rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .directory-grid .character-link:hover .character-open {
+            color: var(--ice);
+        }
+
+        /* LIST VIEW */
+        .directory-grid.is-list {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .directory-grid.is-list .character {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            padding: 18px 22px;
+            text-align: left;
+        }
+
+        .directory-grid.is-list .character-image {
+            width: 78px;
+            height: 78px;
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .directory-grid.is-list .character-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .directory-grid.is-list .character-category {
+            margin-top: 9px;
+        }
+
+        .directory-grid.is-list .character-open {
+            flex-shrink: 0;
+            margin: 0 0 0 auto;
+        }
+
+        /* EMPTY RESULTS */
+        .directory-empty {
+            display: none;
+            padding: 65px 25px;
+            text-align: center;
+            border: 1px dashed var(--border);
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .02);
+        }
+
+        .directory-empty.visible {
+            display: block;
+        }
+
+        .directory-empty-icon {
+            display: grid;
+            place-items: center;
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 22px;
+            border: 1px solid rgba(56, 189, 248, .2);
+            border-radius: 23px;
+            background: rgba(56, 189, 248, .07);
+            color: var(--ice);
+            font-size: 1.8rem;
+        }
+
+        .directory-empty h3 {
+            margin-bottom: 10px;
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.8rem;
+        }
+
+        .directory-empty p {
+            margin-bottom: 22px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .directory-toolbar button:focus-visible,
+        .directory-search input:focus-visible {
+            outline: 2px solid var(--ice);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 1000px) {
+            .directory-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 900px) {
+            .directory-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            .directory-hero {
+                padding-top: 125px;
+                padding-bottom: 35px;
+            }
+
+            .directory-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .directory-toolbar {
+                padding: 17px;
+                border-radius: 21px;
+            }
+
+            .directory-toolbar-top {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .view-controls {
+                align-self: flex-end;
+            }
+
+            .filter-label {
+                width: 100%;
+                margin-bottom: 3px;
+            }
+
+            .filter-button {
+                padding: 8px 11px;
+            }
+
+            .directory-results-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .directory-grid {
+                gap: 12px;
+            }
+
+            .directory-grid .character {
+                padding: 21px 12px;
+            }
+
+            .directory-grid .character-image {
+                width: 82px;
+                height: 82px;
+            }
+
+            .directory-grid .character h3 {
+                font-size: 1.05rem;
+            }
+
+            .directory-grid.is-list .character {
+                gap: 13px;
+                padding: 14px;
+            }
+
+            .directory-grid.is-list .character-image {
+                width: 61px;
+                height: 61px;
+            }
+
+            .directory-grid.is-list .character h3 {
+                font-size: 1.05rem;
+            }
+
+            .directory-grid.is-list .character-open {
+                margin-left: auto;
+                font-size: 0;
+                gap: 0;
+            }
+
+            .directory-grid.is-list .character-open i {
+                font-size: .9rem;
+            }
+
+            .character-open {
+                font-size: .58rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND EFFECTS -->
+    <div class="background-lights">
+        <div class="spotlight one"></div>
+        <div class="spotlight two"></div>
+        <i class="fa-solid fa-clapperboard floating-icon icon-one"></i>
+        <i class="fa-solid fa-microphone floating-icon icon-two"></i>
+        <i class="fa-solid fa-masks-theater floating-icon icon-three"></i>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-container">
+
+            <a href="/" class="brand">
+                <div class="brand-icon">
+                    <img
+                        src="/images/skits-logo.png"
+                        alt="NothingButTyler Skits"
+                        onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=&quot;fa-solid fa-masks-theater&quot;></i>'"
+                    >
+                </div>
+
+                <div class="brand-text">
+                    NothingButTyler
+                    <small>SKITS</small>
+                </div>
+            </a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="/skits">Skits</a>
+                <a href="/characters" aria-current="page">Characters</a>
+                <a href="/bts">Behind the Scenes</a>
+                <a href="https://nothingbuttyler.github.io/" class="peak-button">
+                    <i class="fa-solid fa-mountain"></i>
+                    BACK TO PEAK
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+        <header class="directory-hero">
+            <div class="hero-tag">
+                <i class="fa-solid fa-sparkles"></i>
+                MEET THE CAST
+            </div>
+
+            <h1>
+                The faces behind
+                <span>the chaos.</span>
+            </h1>
+
+            <p class="directory-description">
+                From Mickey and the gang to unexpected guests,
+                meet the characters that bring the NothingButTyler
+                Skits universe to life. Find your favorites and
+                explore the cast.
+            </p>
+
+            <div class="directory-count">
+                <i class="fa-solid fa-masks-theater"></i>
+                <span id="totalCharacterCount">27 characters</span>
+            </div>
+        </header>
+
+        <!-- DIRECTORY -->
+        <section class="section directory-section">
+
+            <div class="section-heading reveal">
+                <p class="eyebrow">THE CHARACTER DIRECTORY</p>
+                <h2>Who's who?</h2>
+                <p>
+                    Search the cast, filter by series, or switch
+                    how the characters are displayed.
+                </p>
+            </div>
+
+            <!-- SEARCH AND CONTROLS -->
+            <div class="directory-toolbar reveal">
+
+                <div class="directory-toolbar-top">
+                    <div class="directory-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="characterSearch"
+                            placeholder="Search characters..."
+                            aria-label="Search characters"
+                            autocomplete="off"
+                        >
+
+                        <button
+                            type="button"
+                            class="clear-search"
+                            id="clearSearch"
+                            aria-label="Clear search"
+                            title="Clear search"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <div class="view-controls" aria-label="Display layout">
+                        <button
+                            type="button"
+                            class="view-button active"
+                            id="gridViewButton"
+                            aria-pressed="true"
+                        >
+                            <i class="fa-solid fa-grip"></i> Grid
+                        </button>
+
+                        <button
+                            type="button"
+                            class="view-button"
+                            id="listViewButton"
+                            aria-pressed="false"
+                        >
+                            <i class="fa-solid fa-list"></i> List
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CATEGORY FILTERS -->
+                <div class="directory-filter-row">
+                    <span class="filter-label">
+                        <i class="fa-solid fa-sliders"></i>
+                        Categories
+                    </span>
+
+                    <button type="button" class="filter-button active" data-filter="all" aria-pressed="true">
+                        All <span class="filter-number">27</span>
+                    </button>
+
+                    <button type="button" class="filter-button" data-filter="MCH" aria-pressed="false">
+                        <i class="fa-solid fa-film"></i>
+                        MCH <span class="filter-number">16</span>
+                    </button>
+
+                    <button type="button" class="filter-button" data-filter="TSC" aria-pressed="false">
+                        <i class="fa-solid fa-water"></i>
+                        TSC <span class="filter-number">3</span>
+                    </button>
+
+                    <button type="button" class="filter-button" data-filter="Guest" aria-pressed="false">
+                        <i class="fa-solid fa-star"></i>
+                        Guest <span class="filter-number">8</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- RESULTS -->
+            <div class="directory-results-header">
+                <h2>The cast <span id="resultsCount">(27)</span></h2>
+                <p class="directory-sort-label" id="resultsDescription">
+                    Showing all characters
+                </p>
+            </div>
+
+            <!-- CHARACTER CARDS -->
+            <div class="character-grid directory-grid" id="characterGrid">
+
+                <!-- FEATURED COACH TY ANDERSON CARD -->
+                <a
+                    href="/cast/coach-ty-anderson"
+                    class="character-link"
+                    data-name="Coach Ty Anderson"
+                    data-category="Guest"
+                    data-description="An iconic part of the NothingButTyler Skits universe."
+                    style="grid-column: 1 / -1;"
+                >
+                    <article
+                        class="character"
+                        style="display:flex;align-items:center;gap:24px;text-align:left;"
+                    >
+                        <div
+                            class="character-image"
+                            style="flex-shrink:0;width:130px;height:130px;margin:0;"
+                        >
+                            <img
+                                src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_Coach_Ty_Anderson_1x1.jpg"
+                                alt="Coach Ty Anderson"
+                                loading="lazy"
+                                style="width:100%;height:100%;object-fit:cover;"
+                            >
+                        </div>
+
+                        <div class="character-info" style="flex:1;min-width:0;">
+                            <h3>Coach Ty Anderson</h3>
+                            <p>An iconic part of the NothingButTyler Skits universe.</p>
+                            <span class="character-category guest">
+                                <i class="fa-solid fa-star"></i> Guest
+                            </span>
+                        </div>
+
+                        <span class="character-open" style="flex-shrink:0;margin:0;">
+                            View character <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </article>
+                </a>
+
+                <a href="/cast/mickey-mouse" class="character-link"
+                   data-name="Mickey Mouse" data-category="MCH"
+                   data-description="The leader of the chaos.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Mickey_1x1.jpg" alt="Mickey Mouse" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Mickey Mouse</h3>
+                            <p>The leader of the chaos.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/minnie-mouse" class="character-link"
+                   data-name="Minnie Mouse" data-category="MCH"
+                   data-description="Always planning something.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Minnie_1x1.jpg" alt="Minnie Mouse" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Minnie Mouse</h3>
+                            <p>Always planning something.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/donald-duck" class="character-link"
+                   data-name="Donald Duck" data-category="MCH"
+                   data-description="Usually angry. Sometimes confused.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Donald_1x1.jpg" alt="Donald Duck" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Donald Duck</h3>
+                            <p>Usually angry. Sometimes confused.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/daisy-duck" class="character-link"
+                   data-name="Daisy Duck" data-category="MCH"
+                   data-description="Always slaying the day with Donald.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Daisy_1x1.jpg" alt="Daisy Duck" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Daisy Duck</h3>
+                            <p>Always slaying the day with Donald.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/goofy-goof" class="character-link"
+                   data-name="Goofy Goof" data-category="MCH"
+                   data-description="Goofy by name. Goofy by nature.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Goofy_1x1.jpg" alt="Goofy Goof" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Goofy Goof</h3>
+                            <p>Goofy by name. Goofy by nature.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/copsillean-mouse" class="character-link"
+                   data-name="Copsillean Mouse" data-category="MCH"
+                   data-description="A weird name but a chill personality.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Copsillean_1x1.jpg" alt="Copsillean Mouse" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Copsillean Mouse</h3>
+                            <p>A weird name but a chill personality.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/nurse" class="character-link"
+                   data-name="Nurse" data-category="MCH"
+                   data-description="He's always here to help :)">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Nurse_1x1.jpg" alt="Nurse" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Nurse</h3>
+                            <p>He's always here to help :)</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/bill-johnson" class="character-link"
+                   data-name="Bill Johnson" data-category="MCH"
+                   data-description="He can be a little crazy, but we love him for that.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Bill_1x1.jpg" alt="Bill Johnson" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>(Basement) Bill Johnson</h3>
+                            <p>He can be a little crazy, but we love him for that.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/mike-johnson" class="character-link"
+                   data-name="Mike Johnson" data-category="MCH"
+                   data-description="Bill and Mike might be an unstoppable, crazy homeless duo.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755" alt="Mike Johnson" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>(Upstairs) Mike Johnson</h3>
+                            <p>Bill and Mike might be an unstoppable, crazy homeless duo.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/clarabelle-cow" class="character-link"
+                   data-name="Clarabelle Cow" data-category="MCH"
+                   data-description="In the NBTSkits world, Clarabelle is literally just like Daisy.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Clarabelle_1x1.jpg" alt="Clarabelle Cow" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Clarabelle Cow</h3>
+                            <p>In the NBTSkits world, Clarabelle is literally just like Daisy.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <!-- MCH BACKGROUND CHARACTERS -->
+                <a href="/cast/best-doctor-1" class="character-link"
+                   data-name="Best Doctor #1" data-category="MCH"
+                   data-description="One of the doctors in the MCH universe.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Best_Doctor_1_1x1.jpg" alt="Best Doctor #1" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Best Doctor #1</h3>
+                            <p>One of the doctors in the MCH universe.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/best-doctor-2" class="character-link"
+                   data-name="Best Doctor #2" data-category="MCH"
+                   data-description="Another doctor in the MCH universe.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Best_Doctor_2_1x1.jpg" alt="Best Doctor #2" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Best Doctor #2</h3>
+                            <p>Another doctor in the MCH universe.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/doctor-1" class="character-link"
+                   data-name="Doctor 1" data-category="MCH"
+                   data-description="A background doctor in the MCH universe.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Doctor_1_1x1.jpg" alt="Doctor 1" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Doctor 1</h3>
+                            <p>A background doctor in the MCH universe.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/doctor-2" class="character-link"
+                   data-name="Doctor 2" data-category="MCH"
+                   data-description="A background doctor in the MCH universe.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Doctor_2_1x1.jpg" alt="Doctor 2" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Doctor 2</h3>
+                            <p>A background doctor in the MCH universe.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/doctor-3" class="character-link"
+                   data-name="Doctor 3" data-category="MCH"
+                   data-description="A background doctor in the MCH universe.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Doctor_3_1x1.jpg" alt="Doctor 3" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Doctor 3</h3>
+                            <p>A background doctor in the MCH universe.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/rude-staff-member-girl" class="character-link"
+                   data-name="Rude Staff Member Girl" data-category="MCH"
+                   data-description="The rude staff member in the MCH universe.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Rude_Staff_Member_Girl_1x1.jpg" alt="Rude Staff Member Girl" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Rude Staff Member Girl</h3>
+                            <p>The rude staff member in the MCH universe.</p>
+                            <span class="character-category"><i class="fa-solid fa-film"></i> MCH</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <!-- TSC CHARACTERS -->
+                <a href="/cast/spongebob-squarepants" class="character-link"
+                   data-name="SpongeBob SquarePants" data-category="TSC"
+                   data-description="Always ready for fun.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_TSC_Spongebob_1x1.jpg" alt="SpongeBob SquarePants" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>SpongeBob SquarePants</h3>
+                            <p>Always ready for fun.</p>
+                            <span class="character-category"><i class="fa-solid fa-water"></i> TSC</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/squidward-tentacles" class="character-link"
+                   data-name="Squidward Tentacles" data-category="TSC"
+                   data-description="He did not ask for this.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_TSC_Squidward_1x1.jpg" alt="Squidward Tentacles" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Squidward Tentacles</h3>
+                            <p>He did not ask for this.</p>
+                            <span class="character-category"><i class="fa-solid fa-water"></i> TSC</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/mr-krabs" class="character-link"
+                   data-name="Mr. Krabs" data-category="TSC"
+                   data-description="Money first. Everything else later.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_TSC_Mr_Krabs_1x1.jpg" alt="Mr. Krabs" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Mr. Krabs</h3>
+                            <p>Money first. Everything else later.</p>
+                            <span class="character-category"><i class="fa-solid fa-water"></i> TSC</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <!-- OTHER CHARACTERS -->
+                <a href="/cast/nothingbuttyler" class="character-link"
+                   data-name="NothingButTyler" data-category="Guest"
+                   data-description="The creator behind the chaos.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/logo.jpg" alt="NothingButTyler" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Me (NothingButTyler)</h3>
+                            <p>The creator behind the chaos.</p>
+                            <span class="character-category guest"><i class="fa-solid fa-star"></i> Guest</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/mrbeast" class="character-link"
+                   data-name="MrBeast" data-category="Guest"
+                   data-description="An unexpected guest.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MrBeast_1x1.jpg" alt="MrBeast" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>MrBeast</h3>
+                            <p>An unexpected guest.</p>
+                            <span class="character-category guest"><i class="fa-solid fa-star"></i> Guest</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/donald-trump" class="character-link"
+                   data-name="Donald Trump" data-category="Guest"
+                   data-description="The most chaotic president there is.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_Donald_Trump_1x1.jpg" alt="Donald Trump" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Donald Trump</h3>
+                            <p>The most chaotic president there is.</p>
+                            <span class="character-category guest"><i class="fa-solid fa-star"></i> Guest</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/donald-trump-guard-1" class="character-link"
+                   data-name="Donald Trump's Guard 1" data-category="Guest"
+                   data-description="One of Donald Trump's guards.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_Donald_Trump_Guard_1_1x1.jpg" alt="Donald Trump's Guard 1" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Donald Trump's Guard 1</h3>
+                            <p>One of Donald Trump's guards.</p>
+                            <span class="character-category guest"><i class="fa-solid fa-star"></i> Guest</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/donald-trump-guard-2" class="character-link"
+                   data-name="Donald Trump's Guard 2" data-category="Guest"
+                   data-description="One of Donald Trump's guards.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_Donald_Trump_Guard_2_1x1.jpg" alt="Donald Trump's Guard 2" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Donald Trump's Guard 2</h3>
+                            <p>One of Donald Trump's guards.</p>
+                            <span class="character-category guest"><i class="fa-solid fa-star"></i> Guest</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/salish-matter" class="character-link"
+                   data-name="Salish Matter" data-category="Guest"
+                   data-description="A chaotic guest in the NothingButTyler Skits universe.">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_Salish_Matter_1x1.jpg" alt="Salish Matter" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Salish Matter</h3>
+                            <p>"chaotic asf" - not Tyler</p>
+                            <span class="character-category guest"><i class="fa-solid fa-star"></i> Guest</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+                <a href="/cast/jordan-matter" class="character-link"
+                   data-name="Jordan Matter" data-category="Guest"
+                   data-description="A chaotic photographer going against his daughter, need I say more?">
+                    <article class="character">
+                        <div class="character-image">
+                            <img src="https://static.wikia.nocookie.net/9bbeb5eb-2dfa-4711-b8af-184fc8a41bf1/scale-to-width/755?#https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_Jordan_Matter_1x1.jpg" alt="Jordan Matter" loading="lazy">
+                        </div>
+                        <div class="character-info">
+                            <h3>Jordan Matter</h3>
+                            <p>A chaotic photographer going against his daughter, need I say more?</p>
+                            <span class="character-category guest"><i class="fa-solid fa-star"></i> Guest</span>
+                        </div>
+                        <span class="character-open">View character <i class="fa-solid fa-arrow-right"></i></span>
+                    </article>
+                </a>
+
+            </div>
+
+            <!-- NO RESULTS -->
+            <div class="directory-empty" id="directoryEmpty" aria-live="polite">
+                <div class="directory-empty-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h3>No characters found.</h3>
+                <p>Try another name or reset your filters.</p>
+                <button type="button" class="button button-primary" id="resetDirectory">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Reset directory
+                </button>
+            </div>
+
+        </section>
+
+        <!-- BTS FEATURE -->
+        <section class="section">
+            <div class="studio-box reveal">
+                <div class="studio-content">
+                    <p class="eyebrow">BEHIND THE SCENES</p>
+                    <h2>The chaos behind the chaos.</h2>
+                    <p>
+                        There's more to the skits than the characters.
+                        Discover the recording, editing, bloopers, and
+                        random moments that help bring each project to life.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="/bts" class="button button-primary">
+                            <i class="fa-solid fa-camera"></i>
+                            EXPLORE BTS
+                        </a>
+                        <a href="/skits" class="button button-secondary">
+                            <i class="fa-solid fa-play"></i>
+                            EXPLORE SKITS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">NothingButTyler <span>Skits</span></div>
+        <p class="footer-text">
+            Comedy. Characters. Chaos.
+            <br>
+            Created by NothingButTyler.
+            <br><br>
+            NothingButTyler © 2026
+        </p>
+    </footer>
+
+    <script>
+        /* MOBILE NAVIGATION */
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+        const navbar = document.getElementById("navbar");
+
+        menuButton.addEventListener("click", () => {
+            const open = navLinks.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(open));
+            menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+            menuButton.querySelector("i").className =
+                open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Open menu");
+                menuButton.querySelector("i").className = "fa-solid fa-bars";
+            });
+        });
+
+        function updateNavbar() {
+            navbar.classList.toggle("scrolled", window.scrollY > 25);
+        }
+
+        window.addEventListener("scroll", updateNavbar, { passive: true });
+        updateNavbar();
+
+        /* SCROLL REVEAL */
+        const revealItems = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealItems.forEach(item => observer.observe(item));
+        } else {
+            revealItems.forEach(item => item.classList.add("active"));
+        }
+
+
+        /* DIRECTORY */
+        const grid = document.getElementById("characterGrid");
+        const cards = Array.from(grid.querySelectorAll(".character-link"));
+        const search = document.getElementById("characterSearch");
+        const clearSearch = document.getElementById("clearSearch");
+        const filterButtons = Array.from(document.querySelectorAll(".filter-button"));
+        const gridButton = document.getElementById("gridViewButton");
+        const listButton = document.getElementById("listViewButton");
+        const resultsCount = document.getElementById("resultsCount");
+        const resultsDescription = document.getElementById("resultsDescription");
+        const emptyState = document.getElementById("directoryEmpty");
+        const resetButton = document.getElementById("resetDirectory");
+        const totalCharacterCount = document.getElementById("totalCharacterCount");
+
+        let activeFilter = "all";
+        let activeView = "grid";
+
+        /* KEEP GRID RESPONSIVE */
+        function updateGridColumns() {
+            if (activeView === "list") {
+                grid.style.setProperty("grid-template-columns", "minmax(0, 1fr)", "important");
+                return;
+            }
+
+            let columns = 4;
+
+            if (window.innerWidth <= 900) {
+                columns = 2;
+            } else if (window.innerWidth <= 1000) {
+                columns = 3;
+            }
+
+            grid.style.setProperty(
+                "grid-template-columns",
+                `repeat(${columns}, minmax(0, 1fr))`,
+                "important"
+            );
+        }
+
+        /* UPDATE CATEGORY COUNTS */
+        function updateFilterCounts() {
+            const counts = {
+                all: cards.length,
+                MCH: 0,
+                TSC: 0,
+                Guest: 0
+            };
+
+            cards.forEach(card => {
+                const category = card.dataset.category;
+
+                if (Object.prototype.hasOwnProperty.call(counts, category)) {
+                    counts[category]++;
+                }
+            });
+
+            filterButtons.forEach(button => {
+                const number = button.querySelector(".filter-number");
+                const category = button.dataset.filter;
+
+                if (number && Object.prototype.hasOwnProperty.call(counts, category)) {
+                    number.textContent = counts[category];
+                }
+            });
+
+            totalCharacterCount.textContent =
+                `${cards.length} ${cards.length === 1 ? "character" : "characters"}`;
+        }
+
+        /* GRID / LIST VIEW */
+        function setView(view) {
+            activeView = view === "list" ? "list" : "grid";
+
+            const isList = activeView === "list";
+
+            grid.classList.toggle("is-list", isList);
+            gridButton.classList.toggle("active", !isList);
+            listButton.classList.toggle("active", isList);
+
+            gridButton.setAttribute("aria-pressed", String(!isList));
+            listButton.setAttribute("aria-pressed", String(isList));
+
+            updateGridColumns();
+        }
+
+        gridButton.addEventListener("click", () => setView("grid"));
+        listButton.addEventListener("click", () => setView("list"));
+
+        window.addEventListener("resize", updateGridColumns, { passive: true });
+
+        /* SEARCH AND CATEGORY FILTERING */
+        function updateDirectory() {
+            const term = search.value.trim().toLowerCase();
+            let visible = 0;
+
+            cards.forEach(card => {
+                const name = (card.dataset.name || "").toLowerCase();
+                const category = (card.dataset.category || "").toLowerCase();
+                const description = (card.dataset.description || "").toLowerCase();
+
+                const matchesText =
+                    name.includes(term) ||
+                    category.includes(term) ||
+                    description.includes(term);
+
+                const matchesCategory =
+                    activeFilter === "all" ||
+                    card.dataset.category === activeFilter;
+
+                const show = matchesText && matchesCategory;
+
+                /* Explicit display prevents other stylesheets from overriding hidden cards. */
+                if (show) {
+                    card.style.removeProperty("display");
+                    card.removeAttribute("hidden");
+                    visible++;
+                } else {
+                    card.style.setProperty("display", "none", "important");
+                    card.setAttribute("hidden", "");
+                }
+            });
+
+            resultsCount.textContent = `(${visible})`;
+
+            emptyState.classList.toggle("visible", visible === 0);
+            grid.style.display = visible === 0 ? "none" : "grid";
+
+            clearSearch.classList.toggle("visible", search.value.length > 0);
+
+            if (activeFilter === "all" && !term) {
+                resultsDescription.textContent = "Showing all characters";
+            } else if (!term) {
+                resultsDescription.textContent =
+                    `Showing ${activeFilter === "Guest" ? "guest" : activeFilter} characters`;
+            } else if (activeFilter !== "all") {
+                resultsDescription.textContent =
+                    `Matching "${search.value.trim()}" in ${activeFilter}`;
+            } else {
+                resultsDescription.textContent =
+                    `Matching "${search.value.trim()}"`;
+            }
+        }
+
+        search.addEventListener("input", updateDirectory);
+
+        clearSearch.addEventListener("click", () => {
+            search.value = "";
+            updateDirectory();
+            search.focus();
+        });
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                activeFilter = button.dataset.filter;
+
+                filterButtons.forEach(item => {
+                    const selected = item === button;
+
+                    item.classList.toggle("active", selected);
+                    item.setAttribute("aria-pressed", String(selected));
+                });
+
+                updateDirectory();
+            });
+        });
+
+        /* RESET FILTERS, SEARCH AND VIEW */
+        resetButton.addEventListener("click", () => {
+            search.value = "";
+            activeFilter = "all";
+
+            filterButtons.forEach(button => {
+                const selected = button.dataset.filter === "all";
+
+                button.classList.toggle("active", selected);
+                button.setAttribute("aria-pressed", String(selected));
+            });
+
+            setView("grid");
+            updateDirectory();
+            search.focus();
+        });
+
+        /* INITIALIZE */
+        updateFilterCounts();
+        setView("grid");
+        updateDirectory();
+
+    </script>
+
+</body>
+</html>
