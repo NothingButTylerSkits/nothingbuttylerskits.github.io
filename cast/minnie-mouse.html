@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minnie Mouse - Characters | NothingButTyler Skits</title>
+
+    <meta name="description" content="Meet Minnie Mouse, a sweet, charming, and unpredictable MCH character who dreams of becoming a star alongside Mickey!">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://nothingbuttylerskits.github.io/assets/files/styles.css">
+
+    <style>
+        /* PROFILE PAGE */
+
+        .profile-hero {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 150px 0 65px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            margin-bottom: 35px;
+        }
+
+        .breadcrumb a {
+            color: var(--ice);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--ice-light);
+        }
+
+        .profile-header {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            align-items: center;
+            gap: 55px;
+            padding: 40px;
+            border-radius: 30px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .profile-picture {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 25px;
+            border: 3px solid rgba(56, 189, 248, 0.25);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .profile-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 15px;
+            border-radius: 50px;
+            color: var(--gold);
+            background: rgba(255, 201, 77, 0.07);
+            border: 1px solid rgba(255, 201, 77, 0.25);
+            font-size: 0.68rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .profile-info h1 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .profile-info h1 span {
+            color: var(--ice);
+        }
+
+        .profile-description {
+            max-width: 650px;
+            color: var(--muted);
+            line-height: 1.85;
+            font-size: 1rem;
+        }
+
+        .profile-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .meta-item i {
+            color: var(--ice);
+        }
+
+        /* CONTENT SECTIONS */
+
+        .profile-section {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 55px 0;
+        }
+
+        .profile-section-heading {
+            margin-bottom: 30px;
+        }
+
+        .profile-section-heading .eyebrow {
+            margin-bottom: 12px;
+        }
+
+        .profile-section-heading h2 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            line-height: 1.05;
+        }
+
+        .profile-section-heading p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-top: 12px;
+            max-width: 700px;
+        }
+
+        .profile-card {
+            padding: 35px;
+            border-radius: 25px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .profile-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .profile-card p {
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 0.95rem;
+        }
+
+        .profile-card p + p {
+            margin-top: 15px;
+        }
+
+        .profile-card-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            color: var(--ice);
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            font-size: 1.3rem;
+            margin-bottom: 22px;
+        }
+
+        /* QUOTE */
+
+        .coach-quote {
+            position: relative;
+            padding: 35px;
+            margin-top: 22px;
+            border-radius: 25px;
+            background: rgba(255, 201, 77, 0.055);
+            border: 1px solid rgba(255, 201, 77, 0.2);
+        }
+
+        .coach-quote i {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .coach-quote h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            color: var(--gold);
+            line-height: 1.2;
+        }
+
+        .coach-quote p {
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
+        /* FUN FACTS */
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .fact-card {
+            padding: 27px;
+            border-radius: 22px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 201, 77, 0.35);
+        }
+
+        .fact-card i {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+
+        .fact-card h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .fact-card p {
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.75;
+        }
+
+        /* APPEARANCES */
+
+        .appearance-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .appearance-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            padding: 27px;
+            border-radius: 22px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .appearance-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        .appearance-icon {
+            width: 65px;
+            height: 65px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            background: rgba(255, 201, 77, 0.1);
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .appearance-label {
+            display: inline-block;
+            color: var(--ice);
+            font-size: 0.65rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .appearance-card h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 9px;
+        }
+
+        .appearance-card p {
+            color: var(--muted);
+            font-size: 0.87rem;
+            line-height: 1.8;
+        }
+
+        .appearance-card .appearance-extra {
+            margin-top: 10px;
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            position: relative;
+            display: grid;
+            gap: 25px;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(
+                to bottom,
+                var(--ice),
+                rgba(255, 201, 77, 0.15)
+            );
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 5px 0 5px 20px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -29px;
+            top: 9px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--ice);
+            border: 3px solid var(--midnight);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .timeline-item h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 7px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        /* BOTTOM CTA */
+
+        .profile-cta {
+            width: min(1200px, 92%);
+            margin: 55px auto 100px;
+            padding: 45px;
+            text-align: center;
+            border-radius: 30px;
+            background: linear-gradient(
+                135deg,
+                rgba(56, 189, 248, 0.11),
+                rgba(255, 201, 77, 0.08)
+            );
+            border: 1px solid var(--border);
+        }
+
+        .profile-cta i {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .profile-cta h2 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px;
+        }
+
+        .profile-cta p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .profile-header {
+                grid-template-columns: 220px 1fr;
+                gap: 30px;
+                padding: 28px;
+            }
+
+            .fact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .profile-hero {
+                padding-top: 120px;
+            }
+
+            .profile-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 25px;
+            }
+
+            .profile-picture {
+                width: min(230px, 75%);
+                margin: auto;
+            }
+
+            .profile-meta {
+                justify-content: center;
+            }
+
+            .profile-section {
+                padding: 40px 0;
+            }
+
+            .profile-card {
+                padding: 25px;
+            }
+
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .appearance-card {
+                flex-direction: column;
+            }
+
+            .profile-cta {
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="background-lights">
+        <div class="spotlight one"></div>
+        <div class="spotlight two"></div>
+
+        <i class="fa-solid fa-film floating-icon icon-one"></i>
+        <i class="fa-solid fa-star floating-icon icon-two"></i>
+        <i class="fa-solid fa-clapperboard floating-icon icon-three"></i>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-container">
+
+            <a href="/" class="brand">
+                <div class="brand-icon">
+                    <img src="https://nothingbuttylerskits.github.io/assets/images/logo.jpg" alt="NothingButTyler Skits">
+                </div>
+
+                <div class="brand-text">
+                    NothingButTyler
+                    <small>SKITS</small>
+                </div>
+            </a>
+
+            <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="/">Skits</a>
+                <a href="/characters.html" class="active">Characters</a>
+                <a href="/behind-the-scenes.html">Behind the Scenes</a>
+                <a href="https://nothingbuttyler.is-a-good.dev/" class="peak-button">
+                    <i class="fa-solid fa-mountain"></i>
+                    Back to Peak
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- PROFILE HERO -->
+    <header class="profile-hero">
+
+        <div class="breadcrumb">
+            <a href="/">Skits</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="/characters.html">Characters</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Minnie Mouse</span>
+        </div>
+
+        <div class="profile-header">
+
+            <div class="profile-picture">
+                <img
+                    src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Minnie_1x1.jpg"
+                    alt="Minnie Mouse"
+                >
+            </div>
+
+            <div class="profile-info">
+
+                <div class="profile-category">
+                    <i class="fa-solid fa-star"></i>
+                    MCH Character
+                </div>
+
+                <h1><span>Minnie</span> Mouse</h1>
+
+                <p class="profile-description">
+                    Sweet, charming, and full of surprises!
+                    Minnie is a cutie patootie who dreams of becoming
+                    a star alongside Mickey. Just don't assume
+                    she's always going to be the innocent one...
+                </p>
+
+                <div class="profile-meta">
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-heart"></i>
+                        Mickey's Girlfriend
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-star"></i>
+                        Aspiring Star
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        Sweet but Unpredictable
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ABOUT -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">GET TO KNOW HER</div>
+            <h2>About Minnie</h2>
+            <p>
+                A sweet and lovable character with a side
+                that can sometimes catch everyone off guard.
+            </p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-card-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <p>
+                <strong>Minnie Mouse</strong> is one of the MCH characters
+                and Mickey's girlfriend. She's often seen as a sweet,
+                adorable, and charming person. She has a lovable
+                personality that makes her easy to get along with.
+            </p>
+
+            <p>
+                But there's more to Minnie than just being cute.
+                Sometimes, she can go from a complete cutie patootie
+                to acting absolutely unhinged. Her unpredictable
+                personality means you never really know what
+                you're going to get.
+            </p>
+
+            <p>
+                Minnie doesn't always act like she's being dramatic
+                or over-the-top, either. Sometimes, her reactions
+                and behavior are completely genuine. There's a
+                difference between when she's putting on a performance
+                and when she's actually being herself.
+            </p>
+
+            <p>
+                Despite her occasional chaotic moments, Minnie
+                genuinely cares about the people close to her.
+                She's especially fond of Mickey, whom she's loved
+                since she was much younger.
+            </p>
+
+            <p>
+                Minnie also has ambitions of her own. She doesn't
+                simply want to stand beside Mickey while he chases
+                his dreams. She wants to become a star herself,
+                make a name for herself, and achieve something
+                alongside the person she loves.
+            </p>
+
+            <p>
+                Whether she's being adorable, spending time with
+                her friends, pursuing her dreams, or surprising
+                everyone with her unpredictable behavior,
+                Minnie definitely knows how to make an impression.
+            </p>
+
+        </div>
+
+        <div class="coach-quote">
+
+            <i class="fa-solid fa-quote-left"></i>
+
+            <h3>Don't let the cuteness fool you.</h3>
+
+            <p>
+                Minnie has a few surprises up her sleeve.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- HER STORY -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">HER JOURNEY</div>
+            <h2>How She Started</h2>
+            <p>
+                From childhood crushes to finding love
+                and eventually becoming part of the
+                NothingButTyler Skits universe.
+            </p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-card-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <p>
+                When Minnie was younger, she had quite an interest
+                in boys. Everywhere she looked, there always seemed
+                to be another pretty boy around. But there was
+                one person who stood out above everyone else:
+                <strong>Mickey Mouse.</strong>
+            </p>
+
+            <p>
+                Minnie had feelings for Mickey for a long time,
+                but she never really got around to telling him.
+                As they grew older, those feelings remained,
+                even as she kept them to herself.
+            </p>
+
+            <p>
+                Eventually, near the end of high school,
+                Mickey decided to confess that he liked Minnie
+                a lot. It turned out that Minnie felt the same way!
+                She confessed her feelings too, and the two
+                officially decided to become a couple.
+            </p>
+
+            <p>
+                Their relationship became an important part
+                of both their lives. They weren't just dating;
+                they also shared a dream of becoming stars.
+                Mickey wasn't the only one who wanted to make it
+                big. Minnie wanted that future just as much.
+            </p>
+
+            <p>
+                Around this time, the NothingButTyler Skits Studio
+                was being introduced to people who might be
+                interested in joining. What happened next
+                was quite unexpected.
+            </p>
+
+            <p>
+                The entire gang showed up! Mickey, Minnie,
+                Daisy, Goofy, Donald, Clarabelle, members
+                of the TSC gang, and eventually plenty of others
+                joined too.
+            </p>
+
+            <p>
+                I was genuinely shocked by how many people
+                became interested. What started as an attempt
+                to introduce the studio to potential members
+                eventually became the beginning of something
+                much bigger.
+            </p>
+
+            <p>
+                And that's how Minnie became part of the
+                NothingButTyler Skits universe, alongside
+                Mickey and the rest of the gang.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FUN FACTS -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">DID YOU KNOW?</div>
+            <h2>Fun Facts About Minnie</h2>
+            <p>
+                There's a lot more to Minnie than meets the eye!
+            </p>
+        </div>
+
+        <div class="fact-grid">
+
+            <div class="fact-card">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Always Liked Mickey</h3>
+                <p>
+                    Minnie had feelings for Mickey
+                    since she was much younger.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-ring"></i>
+                <h3>Official Couple</h3>
+                <p>
+                    Minnie and Mickey became a couple
+                    after confessing their feelings
+                    near the end of high school.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-star"></i>
+                <h3>Wants to Be a Star</h3>
+                <p>
+                    Minnie shares Mickey's dream
+                    of becoming a star herself.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-face-smile"></i>
+                <h3>Cutie Patootie</h3>
+                <p>
+                    Her sweet and adorable personality
+                    is one of her most recognizable traits.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h3>Unpredictable</h3>
+                <p>
+                    Minnie can switch from being
+                    adorable to completely chaotic
+                    when you least expect it.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-masks-theater"></i>
+                <h3>Not Always Acting</h3>
+                <p>
+                    Sometimes her behavior is genuine.
+                    Not everything is part of a skit!
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Part of the Gang</h3>
+                <p>
+                    Minnie joined the studio alongside
+                    Mickey, Daisy, Goofy, Donald,
+                    Clarabelle, and others.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-people-group"></i>
+                <h3>More Than Just Mickey</h3>
+                <p>
+                    Minnie has her own friendships,
+                    ambitions, and place in the group.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-fire"></i>
+                <h3>Surprise Factor</h3>
+                <p>
+                    You might think you know what
+                    Minnie is going to do next.
+                    You probably don't.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- OTHER APPEARANCES -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">ON SCREEN</div>
+            <h2>Other Appearances</h2>
+            <p>
+                Minnie is part of the MCH cast,
+                appearing alongside Mickey and the gang.
+            </p>
+        </div>
+
+        <div class="appearance-list">
+
+            <div class="appearance-card">
+
+                <div class="appearance-icon">
+                    <i class="fa-solid fa-film"></i>
+                </div>
+
+                <div>
+
+                    <div class="appearance-label">
+                        MCH SPECIAL
+                    </div>
+
+                    <h3>Mickey Refuses To Do The Dishes 1</h3>
+
+                    <p>
+                        Minnie appears as part of the MCH cast
+                        in the first special, alongside Mickey
+                        and their friends.
+                    </p>
+
+                    <p class="appearance-extra">
+                        One of her appearances in the MCH specials!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="appearance-card">
+
+                <div class="appearance-icon">
+                    <i class="fa-solid fa-film"></i>
+                </div>
+
+                <div>
+
+                    <div class="appearance-label">
+                        MCH SPECIAL
+                    </div>
+
+                    <h3>Mickey Refuses To Do The Dishes 2</h3>
+
+                    <p>
+                        Minnie returns in the second special,
+                        continuing her appearances alongside
+                        Mickey and the rest of the gang.
+                    </p>
+
+                    <p class="appearance-extra">
+                        More Minnie moments!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="appearance-card">
+
+                <div class="appearance-icon">
+                    <i class="fa-solid fa-tv"></i>
+                </div>
+
+                <div>
+
+                    <div class="appearance-label">
+                        MCH SERIES
+                    </div>
+
+                    <h3>Other MCH Specials & Episodes</h3>
+
+                    <p>
+                        Minnie is part of the wider MCH cast
+                        and appears throughout its specials
+                        and episodes.
+                    </p>
+
+                    <p class="appearance-extra">
+                        There's plenty more Minnie to come!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">THE STORY SO FAR</div>
+            <h2>Minnie's Journey</h2>
+            <p>
+                From her childhood crush to becoming
+                a member of the NothingButTyler Skits Studio.
+            </p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <h3>Childhood Crushes</h3>
+                    <p>
+                        Minnie grows up with an interest
+                        in boys, but one person stands
+                        out from everyone else: Mickey.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Growing Up</h3>
+                    <p>
+                        As Minnie gets older, her feelings
+                        for Mickey remain, although she
+                        doesn't tell him just yet.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>The Confession</h3>
+                    <p>
+                        Near the end of high school,
+                        Mickey confesses that he really
+                        likes Minnie. She confesses
+                        her feelings in return.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Becoming a Couple</h3>
+                    <p>
+                        Mickey and Minnie officially
+                        begin their relationship.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Dreaming of Stardom</h3>
+                    <p>
+                        Both Mickey and Minnie dream
+                        of becoming stars and making
+                        something of themselves.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>The Studio Introduction</h3>
+                    <p>
+                        Tyler introduces the Skits Studio
+                        to potential members, and
+                        unexpectedly, the entire gang
+                        decides to show up.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Joining the Studio</h3>
+                    <p>
+                        Minnie joins Mickey, Daisy,
+                        Goofy, Donald, Clarabelle,
+                        the TSC gang, and others
+                        in the growing studio.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Life in the MCH Universe</h3>
+                    <p>
+                        Minnie continues being part
+                        of the group, balancing her
+                        sweet personality, chaotic
+                        moments, relationship, and dreams.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="profile-cta reveal">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h2>Meet the Rest of the Cast</h2>
+
+        <p>
+            Minnie is just one part of the NothingButTyler
+            Skits universe. Head back to the character directory
+            to explore the rest of the cast.
+        </p>
+
+        <a href="/characters.html" class="button button-primary">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Characters
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            NothingButTyler <span>Skits</span>
+        </div>
+
+        <p class="footer-text">
+            Comedy. Characters. Chaos.
+            <br><br>
+            NothingButTyler © 2026
+        </p>
+
+    </footer>
+
+    <script>
+        // NAVIGATION
+
+        const navbar = document.getElementById("navbar");
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+
+        window.addEventListener("scroll", () => {
+            navbar.classList.toggle("scrolled", window.scrollY > 30);
+        });
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", isOpen);
+
+            menuButton.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        // SCROLL REVEAL
+
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        document.querySelectorAll(".reveal").forEach(element => {
+            revealObserver.observe(element);
+        });
+    </script>
+
+</body>
+</html>
