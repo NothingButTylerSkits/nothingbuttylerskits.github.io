@@ -1,0 +1,1133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Basement Bill Johnson - Characters | NothingButTyler Skits</title>
+
+    <meta name="description" content="Meet Basement Bill Johnson, the memorable MCH character whose unexpected friendship with Mickey Mouse changed his life.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://nothingbuttylerskits.github.io/assets/files/styles.css">
+
+    <style>
+        /* PROFILE PAGE */
+
+        .profile-hero {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 150px 0 65px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            margin-bottom: 35px;
+        }
+
+        .breadcrumb a {
+            color: var(--ice);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--ice-light);
+        }
+
+        .profile-header {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            align-items: center;
+            gap: 55px;
+            padding: 40px;
+            border-radius: 30px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .profile-picture {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 25px;
+            border: 3px solid rgba(56, 189, 248, 0.25);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .profile-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 15px;
+            border-radius: 50px;
+            color: var(--gold);
+            background: rgba(255, 201, 77, 0.07);
+            border: 1px solid rgba(255, 201, 77, 0.25);
+            font-size: 0.68rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .profile-info h1 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .profile-info h1 span {
+            color: var(--ice);
+        }
+
+        .profile-description {
+            max-width: 650px;
+            color: var(--muted);
+            line-height: 1.85;
+            font-size: 1rem;
+        }
+
+        .profile-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .meta-item i {
+            color: var(--ice);
+        }
+
+        /* CONTENT SECTIONS */
+
+        .profile-section {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 55px 0;
+        }
+
+        .profile-section-heading {
+            margin-bottom: 30px;
+        }
+
+        .profile-section-heading .eyebrow {
+            margin-bottom: 12px;
+        }
+
+        .profile-section-heading h2 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            line-height: 1.05;
+        }
+
+        .profile-section-heading p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-top: 12px;
+            max-width: 700px;
+        }
+
+        .profile-card {
+            padding: 35px;
+            border-radius: 25px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .profile-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .profile-card p {
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 0.95rem;
+        }
+
+        .profile-card p + p {
+            margin-top: 15px;
+        }
+
+        .profile-card-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            color: var(--ice);
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            font-size: 1.3rem;
+            margin-bottom: 22px;
+        }
+
+        /* QUOTE */
+
+        .coach-quote {
+            position: relative;
+            padding: 35px;
+            margin-top: 22px;
+            border-radius: 25px;
+            background: rgba(255, 201, 77, 0.055);
+            border: 1px solid rgba(255, 201, 77, 0.2);
+        }
+
+        .coach-quote i {
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .coach-quote h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            color: var(--gold);
+            line-height: 1.2;
+        }
+
+        .coach-quote p {
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
+        /* FUN FACTS */
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .fact-card {
+            padding: 27px;
+            border-radius: 22px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 201, 77, 0.35);
+        }
+
+        .fact-card i {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+
+        .fact-card h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .fact-card p {
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.75;
+        }
+
+        /* APPEARANCES */
+
+        .appearance-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .appearance-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            padding: 27px;
+            border-radius: 22px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .appearance-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        .appearance-icon {
+            width: 65px;
+            height: 65px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            background: rgba(255, 201, 77, 0.1);
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .appearance-label {
+            display: inline-block;
+            color: var(--ice);
+            font-size: 0.65rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .appearance-card h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 9px;
+        }
+
+        .appearance-card p {
+            color: var(--muted);
+            font-size: 0.87rem;
+            line-height: 1.8;
+        }
+
+        .appearance-card .appearance-extra {
+            margin-top: 10px;
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            position: relative;
+            display: grid;
+            gap: 25px;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(
+                to bottom,
+                var(--ice),
+                rgba(255, 201, 77, 0.15)
+            );
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 5px 0 5px 20px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -29px;
+            top: 9px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--ice);
+            border: 3px solid var(--midnight);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .timeline-item h3 {
+            font-family: "Fredoka", sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 7px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        /* BOTTOM CTA */
+
+        .profile-cta {
+            width: min(1200px, 92%);
+            margin: 55px auto 100px;
+            padding: 45px;
+            text-align: center;
+            border-radius: 30px;
+            background: linear-gradient(
+                135deg,
+                rgba(56, 189, 248, 0.11),
+                rgba(255, 201, 77, 0.08)
+            );
+            border: 1px solid var(--border);
+        }
+
+        .profile-cta i {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .profile-cta h2 {
+            font-family: "Fredoka", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px;
+        }
+
+        .profile-cta p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .profile-header {
+                grid-template-columns: 220px 1fr;
+                gap: 30px;
+                padding: 28px;
+            }
+
+            .fact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .profile-hero {
+                padding-top: 120px;
+            }
+
+            .profile-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 25px;
+            }
+
+            .profile-picture {
+                width: min(230px, 75%);
+                margin: auto;
+            }
+
+            .profile-meta {
+                justify-content: center;
+            }
+
+            .profile-section {
+                padding: 40px 0;
+            }
+
+            .profile-card {
+                padding: 25px;
+            }
+
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .appearance-card {
+                flex-direction: column;
+            }
+
+            .profile-cta {
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="background-lights">
+        <div class="spotlight one"></div>
+        <div class="spotlight two"></div>
+
+        <i class="fa-solid fa-film floating-icon icon-one"></i>
+        <i class="fa-solid fa-star floating-icon icon-two"></i>
+        <i class="fa-solid fa-clapperboard floating-icon icon-three"></i>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-container">
+
+            <a href="/" class="brand">
+                <div class="brand-icon">
+                    <img src="https://nothingbuttylerskits.github.io/assets/images/logo.jpg" alt="NothingButTyler Skits">
+                </div>
+
+                <div class="brand-text">
+                    NothingButTyler
+                    <small>SKITS</small>
+                </div>
+            </a>
+
+            <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="/">Skits</a>
+                <a href="/characters.html" class="active">Characters</a>
+                <a href="/behind-the-scenes.html">Behind the Scenes</a>
+                <a href="https://nothingbuttyler.is-a-good.dev/" class="peak-button">
+                    <i class="fa-solid fa-mountain"></i>
+                    Back to Peak
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- PROFILE HERO -->
+    <header class="profile-hero">
+
+        <div class="breadcrumb">
+            <a href="/">Skits</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="/characters.html">Characters</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Basement Bill Johnson</span>
+        </div>
+
+        <div class="profile-header">
+
+            <div class="profile-picture">
+                <!-- Replace with Bill's actual profile picture when available -->
+                <img
+                    src="https://nothingbuttylerskits.github.io/assets/images/cast/1x1/pfp_MCH_Bill_1x1.jpg"
+                    alt="Basement Bill Johnson"
+                >
+            </div>
+
+            <div class="profile-info">
+
+                <div class="profile-category">
+                    <i class="fa-solid fa-star"></i>
+                    MCH Character
+                </div>
+
+                <h1><span>Basement Bill</span> Johnson</h1>
+
+                <p class="profile-description">
+                    Mostly known as Bill. A memorable character who
+                    went from living under a trampoline to finding
+                    a home and a friendship with Mickey Mouse.
+                </p>
+
+                <div class="profile-meta">
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-house"></i>
+                        Formerly Homeless
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-user-group"></i>
+                        Mickey's Friend
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-star"></i>
+                        MCH Character
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ABOUT -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">GET TO KNOW HIM</div>
+            <h2>About Bill</h2>
+            <p>
+                A character with an unexpected story and
+                an even more unexpected friendship.
+            </p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-card-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <p>
+                Basement Bill Johnson, mostly just known as
+                <strong>Bill</strong>, is a character Mickey discovers
+                in the first ever MCH Special:
+                <strong>Mickey Refuses To Do The Dishes</strong>.
+                Before meeting Mickey, Bill had been homeless
+                for around ten years.
+            </p>
+
+            <p>
+                Bill and his brother, <strong>Upstairs Mike Johnson</strong>,
+                had been struggling financially. After robbers stole
+                all their money from their homes, the two brothers
+                tried signing up for jobs. Unfortunately, nobody
+                would accept them because of their appearances.
+                Eventually, both brothers gave up looking for work
+                and started begging for money to survive.
+            </p>
+
+            <p>
+                Despite their circumstances, Bill and Mike chose
+                to spend the money they received on food rather
+                than alcohol. They regularly visited a grocery store
+                where the employees were incredibly kind to them.
+                On one occasion, Bill was just one dollar short
+                when purchasing his food, but the employees still
+                let him buy it and even gave him a few extra dollars
+                to help him out. They showed Mike the same kindness.
+            </p>
+
+            <p>
+                Unfortunately, Bill and Mike eventually had an
+                argument about something that has never been
+                revealed. The disagreement caused them to split up,
+                and Bill hadn't seen his brother for a very long time.
+            </p>
+
+            <p>
+                During his time homeless, Bill lived under a
+                trampoline that had dirt and plants growing beneath it.
+                He had a couple of blankets to keep warm and even
+                used dirt as a pillow. He also carried
+                <strong>Club Crackers™</strong> as food to help
+                keep himself from going hungry.
+            </p>
+
+            <p>
+                One day, someone unexpectedly discovered where
+                Bill was staying. That someone was
+                <strong>Mickey Mouse himself!</strong>
+            </p>
+
+            <p>
+                Mickey had run away from Minnie after refusing
+                to do the dishes. After explaining what happened,
+                Mickey and Bill began hanging out. Mickey learned
+                so much about Bill's life, including what he did
+                for a living, how he found food, and how he managed
+                to survive. Their unexpected meeting turned into
+                a genuinely wholesome friendship.
+            </p>
+
+            <p>
+                Things took a dramatic turn when Bill decided
+                to help Mickey fight Minnie. During the conflict,
+                <strong>Copsillean Mouse</strong> tased Bill with
+                a murder tase. In the MCH universe, murder tases
+                are ten times worse than ordinary tasers used
+                by police, and Bill was left in serious danger.
+            </p>
+
+            <p>
+                Mickey quickly called a hospital, and Bill was
+                taken to the emergency room. After the battle,
+                Mickey returned to check on him. Eventually,
+                Bill recovered and was able to hang out with
+                Mickey again.
+            </p>
+
+            <p>
+                Mickey and Nurse both played important roles
+                in saving Bill's life. Without Mickey finding him,
+                Bill might have continued living under that
+                trampoline for much longer.
+            </p>
+
+            <p>
+                Thankfully, Bill's life eventually changed.
+                He now has a home and continues living with
+                <strong>Mickey</strong>. Their friendship didn't
+                end with the first special either — Bill is still
+                with Mickey in <strong>MCH MRTDTS 2</strong>!
+            </p>
+
+        </div>
+
+        <div class="coach-quote">
+
+            <i class="fa-solid fa-quote-left"></i>
+
+            <h3>Sometimes, an unexpected friendship can change everything.</h3>
+
+            <p>
+                A fitting description of Bill's journey
+                from the first MCH special onward.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- HIS STORY -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">HIS JOURNEY</div>
+            <h2>How He Started</h2>
+            <p>
+                From a difficult life under a trampoline
+                to becoming one of Mickey's friends.
+            </p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-card-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <p>
+                Bill's story begins in the first ever MCH Special,
+                <strong>Mickey Refuses To Do The Dishes</strong>.
+                At the time, he had been homeless for approximately
+                ten years and was living under a trampoline.
+            </p>
+
+            <p>
+                His circumstances were difficult, especially after
+                he and his brother Mike lost their money and
+                struggled to find jobs. Eventually, their paths
+                separated after an argument.
+            </p>
+
+            <p>
+                Bill's life took a different direction when Mickey
+                unexpectedly found him. The two began spending
+                time together, and Mickey learned about the
+                challenges Bill had experienced.
+            </p>
+
+            <p>
+                After Bill was hospitalized during the conflict
+                with Minnie, Mickey returned to check on him.
+                With help from Mickey and Nurse, Bill recovered
+                and eventually found a home with Mickey.
+            </p>
+
+            <p>
+                His story continues in MCH MRTDTS 2, where
+                he is still living with Mickey.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FUN FACTS -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">DID YOU KNOW?</div>
+            <h2>Fun Facts About Bill</h2>
+            <p>
+                Some interesting details about Basement Bill Johnson
+                and his life before and after meeting Mickey.
+            </p>
+        </div>
+
+        <div class="fact-grid">
+
+            <div class="fact-card">
+                <i class="fa-solid fa-clock"></i>
+                <h3>About 10 Years</h3>
+                <p>
+                    Bill had been homeless for approximately
+                    ten years before meeting Mickey.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-user-group"></i>
+                <h3>His Brother Mike</h3>
+                <p>
+                    Bill has a brother named Upstairs Mike Johnson,
+                    who also experienced homelessness for around
+                    ten years.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-cookie-bite"></i>
+                <h3>Club Crackers™</h3>
+                <p>
+                    Bill carried Club Crackers as food to help
+                    prevent himself from going hungry.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-tree"></i>
+                <h3>Under a Trampoline</h3>
+                <p>
+                    Before meeting Mickey, Bill lived beneath
+                    a trampoline with dirt and plants growing
+                    underneath it.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-house"></i>
+                <h3>A New Home</h3>
+                <p>
+                    Bill eventually found a home and continues
+                    living with Mickey after the first special.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Mickey's Friendship</h3>
+                <p>
+                    Mickey's unexpected discovery of Bill
+                    eventually turned into a genuine friendship.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-hospital"></i>
+                <h3>Saved by Mickey and Nurse</h3>
+                <p>
+                    Both Mickey and Nurse played important
+                    roles in helping Bill survive the events
+                    of MCH MRTDTS 1.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-people-arrows-left-right"></i>
+                <h3>Separated Brothers</h3>
+                <p>
+                    Bill and Mike eventually split up after
+                    an argument. The reason behind it remains
+                    unknown.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <i class="fa-solid fa-film"></i>
+                <h3>Behind the Scenes</h3>
+                <p>
+                    Bill also appears behind the scenes in
+                    the TSC special Donald Trump Visits
+                    The Krusty Krab!
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- OTHER APPEARANCES -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">ON SCREEN</div>
+            <h2>Other Appearances</h2>
+            <p>
+                Bill has appeared in both MCH specials
+                and even made a behind-the-scenes appearance
+                in a TSC special.
+            </p>
+        </div>
+
+        <div class="appearance-list">
+
+            <!-- MCH MRTDTS 1 -->
+            <div class="appearance-card">
+
+                <div class="appearance-icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+
+                <div>
+
+                    <div class="appearance-label">
+                        MCH SPECIAL
+                    </div>
+
+                    <h3>Mickey Refuses To Do The Dishes 1</h3>
+
+                    <p>
+                        Bill makes his first appearance in the
+                        original MCH special. Mickey discovers
+                        him living under a trampoline, and the
+                        two become friends. Bill later joins
+                        Mickey during the conflict with Minnie,
+                        where he is tased by Copsillean Mouse
+                        and taken to the hospital.
+                    </p>
+
+                    <p class="appearance-extra">
+                        Bill's introduction to the MCH universe!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- MCH MRTDTS 2 -->
+            <div class="appearance-card">
+
+                <div class="appearance-icon">
+                    <i class="fa-solid fa-house-user"></i>
+                </div>
+
+                <div>
+
+                    <div class="appearance-label">
+                        MCH SPECIAL
+                    </div>
+
+                    <h3>Mickey Refuses To Do The Dishes 2</h3>
+
+                    <p>
+                        Bill returns for the second special.
+                        After everything that happened in the
+                        first part, he is still living with
+                        Mickey and continues their friendship.
+                    </p>
+
+                    <p class="appearance-extra">
+                        His story continues!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- TSC SPECIAL -->
+            <div class="appearance-card">
+
+                <div class="appearance-icon">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+
+                <div>
+
+                    <div class="appearance-label">
+                        TSC SPECIAL · BEHIND THE SCENES
+                    </div>
+
+                    <h3>Donald Trump Visits The Krusty Krab!</h3>
+
+                    <p>
+                        Bill also makes an appearance behind
+                        the scenes in this TSC special.
+                    </p>
+
+                    <p class="appearance-extra">
+                        An appearance outside the MCH specials!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="profile-section reveal">
+
+        <div class="profile-section-heading">
+            <div class="eyebrow">THE STORY SO FAR</div>
+            <h2>Bill's Journey</h2>
+            <p>
+                A quick look at some of the biggest events
+                in Bill's story.
+            </p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <h3>Life With Mike</h3>
+                    <p>
+                        Bill and his brother Upstairs Mike
+                        struggle financially after losing
+                        their money to robbers.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Living Under a Trampoline</h3>
+                    <p>
+                        Bill spends years homeless, finding
+                        ways to get food and stay warm.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Meeting Mickey</h3>
+                    <p>
+                        Mickey unexpectedly discovers Bill
+                        and the two begin spending time together.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>The Hospital</h3>
+                    <p>
+                        After being tased by Copsillean Mouse,
+                        Bill is taken to the hospital.
+                        Mickey and Nurse help save his life.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>A New Beginning</h3>
+                    <p>
+                        Bill recovers and eventually finds
+                        a home living with Mickey.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>MRTDTS 2</h3>
+                    <p>
+                        Bill returns in the second special,
+                        still living with Mickey.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="profile-cta reveal">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h2>Meet the Rest of the Cast</h2>
+
+        <p>
+            Bill is just one part of the NothingButTyler
+            Skits universe. Head back to the character directory
+            to explore the rest of the cast.
+        </p>
+
+        <a href="/characters.html" class="button button-primary">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Characters
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            NothingButTyler <span>Skits</span>
+        </div>
+
+        <p class="footer-text">
+            Comedy. Characters. Chaos.
+            <br><br>
+            NothingButTyler © 2026
+        </p>
+
+    </footer>
+
+    <script>
+        // NAVIGATION
+
+        const navbar = document.getElementById("navbar");
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+
+        window.addEventListener("scroll", () => {
+            navbar.classList.toggle("scrolled", window.scrollY > 30);
+        });
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", isOpen);
+
+            menuButton.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        // SCROLL REVEAL
+
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        document.querySelectorAll(".reveal").forEach(element => {
+            revealObserver.observe(element);
+        });
+    </script>
+
+</body>
+</html>
